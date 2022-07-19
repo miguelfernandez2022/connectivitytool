@@ -1197,8 +1197,13 @@
 				"Upstream Power Level: "
 			],		
 			"Buttons": 
+<<<<<<< Updated upstream
 			[ 
 				["replace_unit","Yes"],
+=======
+			[
+				 ["replace_unit","Yes"],
+>>>>>>> Stashed changes
 				["3led_factory_reset","No","checkcsl"]
 			]
 		},
@@ -1289,7 +1294,6 @@
 				["3led__checkled","No, Behavior stop"]
 			]	
 		}
-
 
 
 
