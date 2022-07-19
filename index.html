@@ -1,1 +1,55 @@
-
+<!DOCTYPE html>
+<!--
+	// Interactive flowchart in HTML/Javascript by Matthew Carpenter
+	// Uses JQuery, see comment of jQuery file included for details.
+	// Version 4.6.1-comcast3
+-->
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> <!-- for picky IE on local network, ensures IE does not use compatibility view just because of local network location -->
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+		<title>Loading...</title>
+		<link rel="stylesheet" href="./src/css/normalize.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="./src/css/flowchart-anim.css" title="Classic" />
+		<link rel="alternate stylesheet" type="text/css" href="./src/css/blue-anim.css" title="Blue" />
+		<link rel="stylesheet" href="./src/css/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="./src/css/toast.css">
+		<link rel="icon" href="./src/img/favicon.ico" type="image/x-icon" />
+		<link rel="icon" type="image/x-icon" href="./src/img/favicon.ico"  />
+		<link rel="shortcut icon" href="./src/img/favicon.ico" type="image/x-icon" />
+		<script type="text/javascript" src="./src/js/jquery-2.2.1.min.js"></script>
+		<script type="text/javascript" src="./src/js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="./src/js/flowchart.js"></script>
+			
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:URL msdt:dt="string"></mso:URL>
+<mso:Original_x0020_Owner msdt:dt="string"></mso:Original_x0020_Owner>
+<mso:Description0 msdt:dt="string"></mso:Description0>
+<mso:Livelink_x0020_ID msdt:dt="string"></mso:Livelink_x0020_ID>
+<mso:Original_x0020_Creator msdt:dt="string"></mso:Original_x0020_Creator>
+<mso:Original_x0020_Path msdt:dt="string"></mso:Original_x0020_Path>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+	<body>
+		<div id="sblogo"></div>
+		<div id="flowchart-area">
+			<!-- 
+				Anything in here will be removed when the user clicks "START OVER"
+				Put anything else you want on the page elsewhere.
+			-->
+		</div>
+		<div id="navbutton">
+			<!--
+				This section is required for the page to work, and is defined here for easier formatting changes. Must contain elements with ID of "backbutton" and "sobutton" or page will not run correctly. Class or different element types just allow for different formatting.
+			-->
+			<form>
+				<input type="button" value="BACK" id="backbutton" />
+				<input type="button" value="START OVER" id="sobutton" />
+			</form>
+		</div>
+		<!-- This is not functional to the page but added as reminder to user -->
+		<div class="instruction">Please copy <strong>entire</strong> flow into Salesforce comments.</div>	
+	</body>
+</html>

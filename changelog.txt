@@ -1,0 +1,244 @@
+6-CSSCORP-dev [Miguel Fernandez]
+*** Improve GUI to a modern material. 
+*** Add 6 files json DB for Troubleshoting and create new steps.
+*** Read the JSON files (line 901 - 977 ).
+*** On flowchart.js, create new function to load this files at the begin ( line 14 - 18) and create conditionals. 
+*** For include the files steps in the main step (line 172 - 249 ), Clean the previous steps ( line 166 - 170 ).
+
+
+
+
+
+5.1-CSSCORP-dev [ Miguel Fernandez]
+*** Mkor impove the GUI and re analize all code, for modularization.
+
+
+4.8-ARRIS-dev [Gregory Woods]
+1/22/19
+*** Set Version on HTML to Version 4.8
+
+*** Kept original provision.js file
+
+*** Added new Slow_Speed.js code to parent file
+
+*** Working with CSS IT for implementation
+
+4.6.6-comcast-dev [Justin Martin/ Joshua Smith]
+5/16/16
+*** Set Version on HTML of Version 4.7 
+
+*** Got rid of all "*" that indicated a new additional to the tool
+
+*** Added Version Number of 4.6.6 on tool front end 
+
+*** Added IP address of 128.136.141.21 to provision_page_cap4 
+
+*** Fixed additional steps of comcast-provision6 from appearing if Activation originally showed successful
+
+4.6.6-comcast-dev [Justin Martin/ Joshua Smith]
+4/3/16
+
+*** Added scrollbars to links that are included in comcast-provision7
+
+*** Added Mac OS X and Windows 10 TCP/IP Configuration article links to comcast-provision7
+
+*** Added verbiage of "The redirect to Comcast Activation page will not work when navigating to secured sites that begins with https such as google.com, yahoo.com, banks, email or social media sites." 
+	to comcast-provision6-1
+
+*** Added buttons "Yes Changed" and "No Already Done" to comcast-provision7 so it can be documented in the notes if it had to be changed or it was already done
+
+*** Changed the width of the article windows for comcast-provision7 so that all text fits in window without having to expand the window itself
+
+4.6.5-comcast-dev [Justin Martin/Joshua Smith]
+3/19/16
+*** Changed the step verbiage to say "Verify the computer is set to obtain its IP and DNS settings automatically?" [comcast-provision7]
+
+*** Added provision_page_cap2 popup for step 3 in article #15983 
+
+*** Added provision_page_cap popup for Note 1 under step 3 in article #15983
+
+*** Added provision_page_cap3 popup for step 4 in article #15983
+
+*** Added provision_page_cap4 popup for note under step 5 in article #15893
+
+*** Added othermodems popup for Caution for troubleshoot step 1 ["Do not power off dedicated telephony modem"] 
+
+*** Made the IP address configuration article links in comcast-provision7 open in separate window 
+
+
+4.6.4-comcast-dev [Justin Martin/Joshua Smith]
+3/16/16
+*** Fixed the infinite loop starting on step "Is Activation Successful" (provision_page_cap3) in both Yes(Comcast) and No(Comcast) paths
+	<---this was accomplished by using the skip property to skip provision_page_cap3 if the step came up before and then redirects to ISP for provisioning [for more information about skips open readme.txt] --> 
+
+*** Added step comcast-provision5-1 (Can the customer get online?) so that this step can be separated from other paths using this verbiage 
+	<---This step was also created to end the infinite loop--> 
+
+*** Rearranged steps IP/DNS and Clear Browser Cache to where IP/DNS will come up first before Clear Browser Cache [following the order in the article #15983]
+
+*** Added text to step comcast-provision6 --- "The redirect to Comcast Activation page will not work when navigating to secured sites that begins with https such as google.com, yahoo.com, banks, email or social media sites. -"
+
+*** Removed Yes/No buttons for comcast-provision7, replace with one button for "Done" 
+
+
+4.6.3-comcast6 [Joshua Smith]
+3/2/16
+***Added "Make sure the previous modem is removed from the network."
+
+***Made "Article #15983" a clickable link to the internal article. 
+
+***Added "You need to be in the same browser as Salesforce to use the link". 
+
+***Added "If you are not using the same browser as Salesforce, click OK to view the external Activation Link otherwise click cancel to close." to the steps button on {provision_page_cap2}.
+
+***Removed {comcast-provision4}
+
+***Removed {no-other-modems} 
+
+4.6.2-comcast5 [Justin Martin] - 02/29/16
+***Made Verify that all other modems are disconnected into a question: "Is there any preexisting modems or routers connected?"
+
+***Create the Popup of the Self-activation process for the step "Follow Comcast self-activation process per article #15983" 
+
+***Created a Link of the self activation process for "Follow Comcast self-activation process per article #15983." 
+	<---The popup and link would be underneath "provision_page_cap2" in the file named provision.js
+		To bring up the pop up for "provision_page_cap2" you would click on Steps at the top right corner 
+		Once the popup opens it will shows the steps for self-activation according to article #15983. You can click on cancel to exit or click on "ok" to open up the public link to the article# 15894--->
+
+***added 4 buttons on "Does the customer get a service provider page?": Yes(Other ISP), No (Other ISP), Yes (Comcast), No (Comcast) 	
+
+***Changed "Plug the new modem back in" to "Use an Ethernet cable directly connected from a computer to the cable modem instead of wireless to reduce activation issues."
+   <---it would follow what is stated in the article #15983--> 
+   <---More Info button on the right shows additional information about the power cycle of the modem for this step--->
+
+4.6.2-comcast4 [by Justin Martin] 
+***Improved handling of Comcast Activation Process according to #15983
+***Added "CAP" button to the step that states "Does the customer get a service provider page?"
+***Included troubleshooting steps to follow the article #15983
+***If the activation was not successful on first attempt, it will go through troubleshooting steps from #15983 and reasks if activation was successful.
+If the activation was still not successful, then redirect to Comcast for provisioning. 
+
+
+4.6.2-comcast3
+** bug fixes - a skip name used to handle provisioning redirects in CAP was accidentally reused from other behavior
+**** this has been corrected, the "No (Comcast)" option is no longer offered on retry provisioning when not first-time setup.
+**** fixed some incorrect jumps between steps when CAP is interrupted by another issue
+
+
+4.6.2-comcast2
+** Improved handling of Comcast Activation Process
+**** Now handles customers calling us while already able to access the provisioning page
+**** Continues with Comcast Activation Process steps if provisioning page appears but does not work
+ 
+4.6.1-comcast version: changes in provisioning behavior
+** Follows new Comcast Activation Process
+** Specifies to use CAP instead of PWT as case flag when applicable
+** Advise customer to attempt self-activation when present
+** Now includes optional blue theme from later betas (default is Clouds as before)
+
+changes in 4.6
+** Fixed typos
+
+changes in 4.5
+** Fix for flow no longer checking if first time setup / has been provisioned
+
+changes in 4.4
+** You can now specify multiple actions to consider for step skipping in a button.
+** Flow restructured to fit clarified requirements and troubleshooting steps 
+**** Tries reset first if the send light is flashing
+**** If lights are solid, checks for direct connection to modem before performing other troubleshooting
+**** If the customer is using a separate modem and can't bypass, both modem and router are powercycled
+**** Removed "Are any devices able to access the Internet"
+** Some unlikely or "user error" inputs that caused errors or loops have been fixed
+** The tool now remembers if a direct connection to the modem was not possible and warns about this before RMA
+
+changes in 4.3
+** added option to override height of optional notes field for individual steps (such as ones prompting manual troubleshooting)
+** added buttons and skips to flow file to compensate for possibility of lights returning to non-solid state
+** changed handling of warranty status slightly in flow
+** miscellaneous code cleanup to reduce chances of browser updates changing functionality
+** small appearance tweaks
+
+changes in 4.2
+** Reset skipping now replaced with generic step skipping. You can remember and skip any type of action now.
+**** If another power outlet, checking coax, checking TV service, or reset have been done, they are skipped.
+
+** Added ability to have tables in the comment text style, defined in steps
+
+** Changes to flow to correct omissions, better match desired flow, and facilitate generic step skipping
+**** Troubleshooting coax and power are separated from their prior steps to remember the action done.
+**** Redundant LED Check forms are now replaced with the first one thanks to this change, flow is now cleaner
+
+** There is now an ALL OFF button for the LED status
+
+** Added ability to skip steps that are "too early". 
+**** Example, the step that asks if the customer is online skips itself if it's before step 3 (if no troubleshooting yet done)
+
+
+Changes in 4.1a
+** Changed style for buttons. Old button style still present by selecting alternate "Original" Page Style in browser "View" menu
+**** Some other interface tweaks applied as well. Many of these can be reverted by selecting alternate "Original" page style in browser "View" menu.
+
+** Added subtle transition animations for IE10+ and Firefox 16+. These may work in some other browsers as well.
+**** Incompatible browsers will simply skip animations.
+**** These animations can be disabled in compatible browsers by selecting alternate "No Animation" page style in browser "View" menu.
+
+** Poplink now is part of the "info" button instead of a link for the question text.
+**** If both Popmsg and Poplink are specified, the Popmsg will act as an OK/Cancel confirmation box prior to opening the Poplink
+
+** Completely new flow
+**** Highlights: Bypassing router only done if it looks to be relevant, initial powercycle is skipped
+**************** RMA step now clarified with options for different possibilities, such as OOW/MSO products or additional troubleshooting needed
+
+
+
+
+Changes in 4.0a2
+** Fixed reset skip so it does not count resets if a reset was not actually seleted, such as "Unable to reset" or "Already performed"
+
+Changes in 4.0a1
+** Updated remaining LED questions to new input table. Testing not yet fully complete.
+** If a factory reset is performed during the call already, subsequent factory resets are skipped if they specify a step to which to skip.
+** If user backtracks past a step where a reset was performed or starts over, the next reset is shown normally
+*** "Already performed" buttons for factory resets will not be removed until reset skipping is fully tested
+
+
+Changes in 4.0a
+** New LED status input table
+** "info" bubble and links on certain steps
+
+Changes in 3.5.1
+** pressing Tab in notes field now inserts an indent instead of moving to Reset button
+
+Changes in 3.5
+** unless specified otherwise by a step, the agent will have a text
+   area to enter comments for elaboration on steps taken or explanation
+   for the option selected when it is not a perfect fit
+**** Opt-out for note field is defined by presence of "NoNotes" in a step.
+     This is intended for substeps where formatting may be affected, but
+     can also be used in steps that should not have room for deviation.
+     See readme or flow for more information
+
+** When clicking a button, agent-entered notes will be appended before the
+   response clicked
+
+** BACK button re-enters agent-entered notes when returning to a previous
+   step with notes 
+
+** BACK button now appears on second step in event that notes are entered on
+   START step 
+
+** Cleaned up code a little bit for readability.
+
+** Added/improved comments in code on all files
+
+** Improved readability of Readme file
+
+** Changed the HTML file so IE renders in latest standards supported by 
+   browser. This counters the default behavior in some versions to use
+   compatibility view on intranet sites when not needed.
+**** This ensures behavior is similar across computers on updated IE
+     versions
+
+** adjusted layout to allow an adequate size for text input,
+   other fine-tuning to layout and appearance.
