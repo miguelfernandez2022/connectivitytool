@@ -511,10 +511,10 @@
 			"Buttons": 
 			[ 
 				["1led_factory_reset","Yes, have a response","checkPingreset"], 
-				["1led_not_service_disconenct_coax","Not response, time out"] 
+				["1led_not_service_disconnect_coax","Not response, time out"] 
 			]
 		},
-		"1led_not_service_disconenct_coax":
+		"1led_not_service_disconnect_coax":
 		{
 			"Question": "Have access to GUI with the Coax Disconnected?",
 			"Text": 
@@ -741,8 +741,9 @@
 		{
 			"Question": "Redirect the Customer to Third Party Manufacturer",
 			"Text": 
-			[	"<br>",
-				"***Suggest to aquire a Device that could be connected Hardwired to the modem and Call us Back",
+			[	
+				"<br>",
+				"***Suggest to acquire a Device that could be connected Hardwired to the modem and Call us Back",
 				"***Provide Case Number to Customer"
 			]
 		},
@@ -832,8 +833,7 @@
 		{
 			"Question": "Try the other network. Still underperforming?",
 			"Text":["Guide to speedtest.net or fast.com and do a speed test"],
-			"QuestionsTemplate":
-			["Speed test result: "],
+			"QuestionsTemplate": ["Speed test result: "],
 			"Buttons":
 			[ 
 				["1led_slow_speed__gateway_wifi__interference_powercycle","Yes"],
@@ -863,8 +863,7 @@
 		{
 			"Question": "Check the firewall configuration. Is speed still underperforming?",
 			"Text": ["Ask the customer to run a speed test on speedtest.com or fast.com"],
-			"QuestionsTemplate":
-			["Speed test result: "],
+			"QuestionsTemplate": ["Speed test result: "],
 			"Buttons":
 			[
 				["1led_slow_speed__gateway__wifi_congestion","Yes"],
@@ -979,8 +978,7 @@
 		},	
 		"1led_intermittent_connection__modem_reboot":
 		{
-			"Question":"Does the ARRIS device reboot on its own?",
-			
+			"Question":"Does the ARRIS device reboot on its own?",			
 			"Buttons": 
 			[ 
 				["1led_intermittent_connection__modem_rebooting_steps","Yes"],
