@@ -1,0 +1,425 @@
+/* Flowchart version 5-comcast3
+	Written by Matthew Carpenter, Modified by Gregory Woods
+    Modify by Miguel Fernandez 
+	Originally created for ARRIS Connectivity tool
+    */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+
+body {
+	background: rgb(238, 246, 255);	
+    background-color: #ffffff;
+    background-image: url("Subtle-Prism.svg");
+    background-attachment: fixed;
+    background-size: cover;
+	overflow-y: scroll;
+    font-family: 'Quicksand', serif;
+}
+
+#sblogo {
+    background: url("sblogo.gif") center no-repeat;
+    border-radius: .3em;
+    position: fixed;
+    right: .8em;
+    bottom: .8em;
+    width: 200px;
+    height: 40px;
+    z-index: 9999;
+    opacity: 0.75;
+    animation: sblogospin 1s;
+}
+
+#flowchart-area {
+	width:800px;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap; 
+    justify-content: center;
+        
+}
+
+.notecap {
+    color: #404040;
+    font-size: .6em;
+    margin-left: 0.5em;       
+}
+.tip {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 4%;
+    font-size: .7em;
+    padding: 1px;
+    background-color: rgba(200,200,200,.75);
+    font-weight: bold;
+    border: 1px solid rgba(0,0,0,.75);
+    border-radius: 1em;
+    cursor: help;
+}
+
+
+@keyframes sblogospin {
+    0%{transform: rotateY(-90deg)}
+    100%{transform: rotateY(0deg)}
+}
+
+.emphasis {
+	color: #f00000 !important;
+	font-weight: bold !important;
+}
+
+.step {
+	/* reserved for appearance tweaks */
+	animation: stepfade .4s;
+}
+
+.question {
+	font-size: 1.1em;
+	font-weight: bold;
+    width: 100%;
+
+}
+
+.answer {
+	padding-left: 1.5em;
+	font-style: italic;
+	animation: stepfade .3s;
+}
+
+.answertext{
+	padding-left: 1em;
+	font-style: italic;
+	color: #0050d0;
+/*	background: #fffff0;*/
+	animation: stepfade .2s;
+}
+
+.text {
+	
+	padding-left: 0.5em;
+	color: #3030a0; 
+    font-size: .8em;
+}
+
+table.text {
+    border: 1px solid #3030a0;
+    border-collapse: collapse;
+}
+
+table.text td, table.text th {
+    border: 1px solid #3030a0;
+    padding: 2px 10px;
+    text-align: center;
+}
+
+table.text th {
+    background-color: #e0e0e0;
+}
+
+.response {
+	display: block;
+	padding-top: 0px;
+	margin-top: 5px;
+	margin-left: 0.5em;
+	max-width: 80%;
+	vertical-align: left;
+}
+
+.response input {
+	margin: 3px;
+    background-color: #1da38d; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+}
+.response input:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+input[type=reset],input[type=button] {
+    margin: 3px;
+    background-color: #1da38d; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+input[type=reset]:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+input[type=button]:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+} 
+
+.response [type='reset'] {
+    position: relative;
+    vertical-align: bottom;
+     
+}
+
+.activeq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	padding: 5px;
+	border: solid 1px #F5D76E;
+    border-radius:8px;
+    background: #ffffed;
+	min-width: 520px;
+	padding-right: 3em;
+    
+}
+
+.notefield {
+	min-width: 400px;
+	width: 80%;
+	max-width: 600px;
+	height: 3em;
+}
+
+.instruction {
+	font-size: 1em;
+	padding: 1em;
+/*	color: #0050d0;*/
+}
+
+#navbutton {
+/*
+	position: fixed;
+	display: block;
+	right: 5px;
+	top: 5px; */
+	margin: .5em 2em;
+}
+
+#debug {
+	color: red;
+	padding: 10px;
+}
+
+/* led table input */
+
+.ledon input, .ledflash input, .ledoff input {
+    visibility: hidden;
+}
+
+td.ledon, td.ledflash, td.ledoff, th.ledhead, th.ledhead2 {
+    border-radius: 1em;
+    cursor: pointer;
+    border: outset 1px black;
+}
+
+.ledtable {
+    font-size: .94em;
+	margin: 5px;
+	padding: 2px;
+	text-align: center;
+	border: none 2px;
+}
+
+.ledtable th {
+    width: 7em;
+}
+
+.ledhead, .ledhead2 {
+	/*background-color: rgba(230,230,230,1);*/
+	border: 1px dotted black !important;
+	border-radius: 0px !important;
+}
+
+.ledhead.sel, ledhead2.sel {
+    border: solid 1px black !important;
+}
+
+.ledon, .ledflash, .ledoff {
+    background-color: rgba(230,230,230,.5)
+}
+
+/*.ledon {
+	background-color: rgba(0,160,0,.25);
+}*/
+
+.sel.ledon {
+    background-color: rgba(80,150,80,1);
+    animation: fadeonin .25s;
+}
+
+/*.ledflash {
+    background-color: rgba(80,150,80,1);
+	background-color: rgba(230,230,0,.25);
+}*/
+
+.ledflash.sel {
+	background-color: rgba(240,200,0,1);
+	animation: fadeflashin .25s;
+}
+
+/*.ledoff {
+	background-color: rgba(200,50,50,.25);
+}*/
+
+.ledoff.sel {
+/*  	background-color: rgba(220,80,80,1); */
+	background-color: rgba(0,0,0,1);
+	animation: fadeoffin .25s;
+}
+
+th.ledon, th.ledflash, th.ledoff {
+    background-color: transparent;
+    border-bottom: none;
+    border-radius: .5em;
+    border-bottom-right-radius: 0em;
+    border-bottom-left-radius: 0em;
+}
+
+.ledspacer {
+	background-color: transparent;
+	border:	none !important;
+}
+
+.ledsubm {
+    width: 30em;
+    padding: .25em;
+}
+
+.ledsubm div {
+    padding: 0px;
+    margin: -.5em;
+}
+
+.ledsubm input {
+    margin: 0em .5em 1em;
+}
+
+.ledreset {
+    width:  8em;
+    background-color: #1da38d; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.ledreset:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+
+}
+
+.leddone {
+    width: 23em;
+    background-color: #1da38d; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.leddone:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.sel {
+	border:	inset 1px black !important;
+/*	padding: 0px 2.5px;*/
+}
+
+
+
+
+@keyframes fadeonin {
+    0% {
+        background-color: rgba(230,230,230,.5);
+        transform: rotateX(0deg);
+    }
+    49% {
+        background-color: rgba(230,230,230,.5);
+        transform: rotateX(90deg);
+    }
+    50% {
+        background-color: rgba(80,150,80,1);
+        transform: rotateX(90deg);
+    }
+    100% {
+        background-color: rgba(80,150,80,1);
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes fadeflashin {
+    0% {
+        background-color: rgba(230,230,230,.5);
+        transform: rotateX(0deg);
+    }
+    49% {
+        background-color: rgba(230,230,230,.5);
+        transform: rotateX(90deg);
+    }
+    50% {
+        background-color: rgba(240,200,0,1);
+        transform: rotateX(90deg);
+    }
+    100% {
+        background-color: rgba(240,200,0,1);
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes fadeoffin {
+    0% {
+        background-color: rgba(230,230,230,.5);
+        transform: rotateX(0deg);
+    }
+    49% {
+        background-color: rgba(230,230,230,.5);
+        transform: rotateX(90deg);
+    }
+    50% {
+    	background-color: rgba(0,0,0,1);
+        transform: rotateX(90deg);
+    }
+    100% {
+    	background-color: rgba(0,0,0,1);
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes stepfade {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}

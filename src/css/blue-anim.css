@@ -1,0 +1,430 @@
+/* Flowchart version 4.6.1-comcast3
+	Written by Matthew Carpenter
+	Originally created for ARRIS connectivity tool
+	This theme carried over from 4.6.4 beta
+*/
+
+/* Fonts from Google Fonts.*/
+ /*@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700);*/
+
+/* Begin flowchart style */
+
+
+#flowchart-area > h2:nth-child(1)::before {
+    content: "";
+    height: 6px;
+    background: rgb(183,167,82);
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 9px;
+    right: 9px;
+    z-index: -1;
+    border-radius: 1em;
+}
+
+#sblogo {
+    background: url("sblogo.gif") center no-repeat;
+    border-radius: .3em;
+    position: fixed;
+    right: .8em;
+    bottom: .8em;
+    width: 200px;
+    height: 40px;
+    z-index: 9999;
+    opacity: 0.75;
+    animation: sblogospin 1s;
+}
+
+h2, #navbutton {
+    background: rgb(107, 124, 142);
+    color: white;
+    margin: 0px 0px 15px 0px;
+    padding: 5px;
+    min-height: 25px;
+    font-size: 1.2em;    
+}
+
+#flowchart-area > span:nth-child(2) {
+    padding-left: 10px;
+}
+
+
+#navbutton form {
+    text-align: right;
+}
+
+#navbutton form input {
+    background: rgb(215, 215, 215);
+    border-radius: .2em;
+}
+
+.notecap {
+    color: #404040;
+    font-size: .8em;
+    margin-left: 0.5em;       
+}
+
+
+#sblogo {
+    background: url("sblogo.gif") center no-repeat;
+    border-radius: 1em;
+    position: fixed;
+    right: .5em;
+    bottom: .5em;
+    width: 91px;
+    height: 137px;
+    z-index: 9999;
+    animation: sblogospin 1s;
+}
+
+#flowchart-area {
+	width: 800px;
+    display: inline-block;        
+}
+
+.tip {
+    left:3em;
+    position:relative;
+    float: right;
+    font-size: .7em;
+    padding: 1px;
+    background-color: rgba(200,200,200,.75);
+    font-family: Roboto;
+    border: 1px solid rgba(0,0,0,.75);
+    border-radius: 1em;
+    cursor: help;
+}
+
+body {
+	background: rgb(238, 246, 255);
+	overflow-y: scroll;	
+    font-family: 'Roboto', sans-serif,'Noto Sans JP', sans-serif;  
+	font-size: .8em;
+}
+
+.emphasis {
+	color: #f00000 !important;
+	font-weight: bold !important;
+}
+
+#flowchart-area {
+	border: solid 1px #eaeaea;
+    background: rgb(248, 248, 248);    
+}
+
+.step {
+	padding-left: 20px;
+    padding-bottom: 5px;
+	transform-origin: 0% 0% 0;
+	animation: stepfade2 .25s;
+}
+
+.step:last-child > .question:nth-child(2) {
+    margin-left: -10px;
+}
+
+.question {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.answer {
+    display: inline-block;
+    position: relative;
+	padding-left: 1em;
+	top: .125em;
+	font-style: italic;
+	animation: stepfade .3s;
+}
+
+.answertext{
+	padding-left: 1em;
+	padding-right: 5em;
+	font-style: italic;
+	color: #0050d0;
+/*	background: #fffff0;*/
+	animation: stepfade .2s;
+}
+
+.text {
+	font-size: 0.8em;
+    display: block;;
+	margin-left: 0.5em;
+	color: black;
+}
+
+table.text {
+    display: table;
+    margin-left: 0.5em;
+    border: 1px solid rgb(107, 124, 142);
+    border-collapse: collapse;
+}
+
+table.text td, table.text th {
+    border: 1px solid rgb(107, 124, 142);
+    padding: 2px 10px;
+    text-align: center;
+}
+
+table.text th {
+    background-color: #e0e0e0;
+}
+
+.response {
+	display: block;
+	padding-top: 0px;
+	margin-top: 5px;
+	margin-left: 0.5em;
+	max-width: 80%;
+	vertical-align: left;
+}
+
+input {
+	margin: 3px;
+	border-radius: .25em;
+    background: rgb(215,215,215);
+}
+
+.response [type='reset'] {
+    position: relative;
+    vertical-align: bottom; 
+}
+
+.activeq {
+	padding: 10px;
+	border: solid 2px rgb(107, 124, 142);
+	margin: .25em .5em .5em 1em;
+	border-radius: 1em;
+    background: rgb(248, 248, 248);
+	min-width: 60em;
+	width: 90%;
+	padding-right: 3em;
+    
+}
+
+.notefield {
+	min-width: 500px;
+	min-height: 500px;
+	width: 80%;
+	max-width: 600px;    
+	border-radius: .4em;
+	border: 2px inset rgb(107, 124, 142);
+	padding: 1px;
+}
+
+.instruction {
+    position: relative;
+    display: inline;
+	font-size: 1em;
+	padding: 1em;
+    top: -3em;
+    color: white;
+}
+
+#debug {
+	color: red;
+	padding: 10px;
+}
+
+/* led table input */
+
+.ledon input, .ledflash input, .ledoff input {
+    visibility: hidden;
+}
+
+td.ledon, td.ledflash, td.ledoff, th.ledhead, th.ledhead2 {
+    border-radius: 1em;
+    cursor: pointer;
+    border: outset 1px black;
+}
+
+.ledtable {
+	margin: 5px;
+	padding: 2px;
+	text-align: center;
+	border: none 2px;
+}
+
+.ledtable th {
+    width: 7em;
+}
+
+.ledhead, .ledhead2 {
+	border: 1px dotted rgb(107, 124, 142) !important;
+	border-radius: 0px !important;
+}
+
+.ledhead.sel, ledhead2.sel {
+    border: solid 1px rgb(107, 124, 142) !important;
+}
+
+.ledon, .ledflash, .ledoff {
+    background-color: rgb(239,239,239);
+}
+
+.sel.ledon {
+	background-color: rgb(84, 109, 142);
+	animation: fadeonin .25s;
+}
+
+.ledflash.sel {
+	background-color: rgb(84, 109, 142);
+	animation: fadeflashin .25s;
+}
+
+.ledoff.sel {
+	background-color: rgb(84, 109, 142);
+	animation: fadeoffin .25s;
+}
+
+th.ledon, th.ledflash, th.ledoff {
+    background-color: transparent;
+    border-bottom: none;
+    border-radius: .5em;
+    border-bottom-right-radius: 0em;
+    border-bottom-left-radius: 0em;
+}
+
+.ledspacer {
+	background-color: transparent;
+	border:	none !important;
+}
+
+.ledsubm {
+    width: 30em;
+    padding: .25em;
+}
+
+.ledsubm div {
+    padding: 0px;
+    margin: -.5em 0em 0em -.75em;
+}
+
+.ledsubm input {
+    margin: 0em .5em 1em;
+}
+
+.ledreset {
+    width:  7em;
+}
+
+.leddone {
+    width: 18em;
+}
+
+.sel {
+	border:	inset 1px black !important;
+/*	padding: 0px 2.5px;*/
+}
+
+
+.tip {
+    display: inline-block;
+    margin: -.85em -3.78em;
+    float: right;
+    position: relative;
+    font-size: .8em;
+    padding: 5px;
+    background-color: rgb(215,215,215);   
+    font-family: 'Roboto', sans-serif,'Noto Sans JP', sans-serif;
+    border-left: 1.5px solid rgb(107, 124, 142);
+    border-bottom: 1.5px solid rgb(107, 124, 142);
+    border-radius: 0em 1.1em 0em .25em;
+    cursor: help;
+}
+
+.tip:hover {
+    background-color: rgb(235,235,235);
+}
+
+.notefield:focus {
+    border: 2px inset black;
+}
+
+.error {
+    background: rgb(255,180,180);
+    padding: 1em;
+    border: 1px dashed red;
+    border-left: 1em solid red;
+    margin: 5px;
+}
+
+@keyframes fadeonin {
+    0% {
+        background-color: rgb(239,239,239);
+        transform: rotateX(0deg);
+    }
+    49% {
+        background-color: rgb(239,239,239);
+        transform: rotateX(90deg);
+    }
+    50% {
+        background-color: rgb(84, 109, 142);
+        transform: rotateX(90deg);
+    }
+    100% {
+        background-color: rgb(84, 109, 142);
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes fadeflashin {
+    0% {
+        background-color: rgb(239,239,239);
+        transform: rotateX(0deg);
+    }
+    49% {
+        background-color: rgb(239,239,239);
+        transform: rotateX(90deg);
+    }
+    50% {
+        background-color: rgb(84, 109, 142);
+        transform: rotateX(90deg);
+    }
+    100% {
+        background-color: rgb(84, 109, 142);
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes fadeoffin {
+    0% {
+        background-color: rgb(239,239,239);
+        transform: rotateX(0deg);
+    }
+    49% {
+        background-color: rgb(239,239,239);
+        transform: rotateX(90deg);
+    }
+    50% {
+    	background-color: rgb(84, 109, 142);
+        transform: rotateX(90deg);
+    }
+    100% {
+    	background-color: rgb(84, 109, 142);
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes stepfade {
+    0% {
+        opacity: 0;
+        transform: translateX(-2em);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0em);
+    }
+}
+
+@keyframes stepfade2 {
+    0% {
+        opacity: 0;
+        transform: scale(.5) translateX(0em);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1) translateX(0em);
+    }
+}
