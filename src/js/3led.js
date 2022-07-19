@@ -1116,120 +1116,105 @@
 		{
 			"Question":"Which type of clients are experiencing issues on the network?",
 			"Text": ["i.e Wi-Fi laptop, Wi-Fi printer, Wired gaming console, iPhone"],
-			"Buttons": [["3led_intermittent_connection__gateway__affectiontype","Done"]]
+			"Buttons": 
+			[
+				["3led_intermittent_connection__gateway__affectiontype","Done"]
+			]
 		},
 		"3led_intermittent_connection__gateway__affectiontype":
 		{
 			"Question":"Is the issue affecting hardwired connection, via Wi-Fi or both?",
 			"Text": 
-			[ "If customer does not know if it happens Hardwired,",
+			[ 
+				"If customer does not know if it happens Hardwired,",
 				"as well please connect a pc hardwired to monitor performance."
 			],
 			"Buttons": 
-			[ ["3led_intermittent_connection__gateway__affectiontype_wifi","Wi-Fi"],
-				["3led_intermittent_connection__gateway__affectiontype_wired","Wired - Both"]
+			[ 
+				["3led_intermittent_connection__gateway__affectiontype_wifi","Wi-Fi"],
+				["3led_intermittent_connection__gateway__wired_checkreboot","Wired - Both"]
 			]
 		},
 		"3led_intermittent_connection__gateway__affectiontype_wifi":
 		{
 			"Question":"Has the customer already contacted us?",
 			"Text": 
-			[ "Check if the Device's Placement is correct.",
+			[ 
+				"Check if the Device's Placement is correct.",
 				"Check the amount of nearby access points and change Wi-Fi channels to the least congested one.",
 				"Type on the comment field below the amount of APs found per band",
-				"Changed Wi-Fi channels, device's location and monitored performance?"	
+				"Changed Wi-Fi channels, device's location and monitored performance?"
+			],
+			"QuestionsTemplate":
+			[
+				"Case number: ",
+				"Amount of APs Found per Band: ",
+				"Wi-Fi channel least congested: ",
+				"Changed Wi-Fi channels: ",
+				"Device's location: "
 			],
 			"Buttons": 
-			[ ["replace_unit","Yes"],
+			[ 
+				["replace_unit","Yes"],
 				["3led_intermittent_connection__gateway__affectiontype_monitorperformance","No"]
 			]
 		},
 		"3led_intermittent_connection__gateway__affectiontype_monitorperformance":
 		{
 			"Question":"Monitor Network's Performance for the Next 24 hours",
-			"Text": 
-			[ 
-				"***Provide Case Number for future reference."
-			]
-		},
-		"3led_intermittent_connection__gateway__affectiontype_wired":
-		{
-			"Question":"Any changes in the network when the issue started?",
-			"Text": 
-			[ " "	],
-			"Buttons": 
-			[ ["3led_intermittent_connection__gateway__wired_issueoccur","Done"] ]
-		},
-		"3led_intermittent_connection__gateway__wired_issueoccur":
-		{
-			"Question":"How often and what time of day does the issue occur?",
-			"Text": 
-			[ " "	],
-			"Buttons": 
-			[ ["3led_intermittent_connection__gateway__wired_powercycle","Done"]	]
-		},
-		"3led_intermittent_connection__gateway__wired_powercycle":
-		{
-			"Question":"Was a power cycle performed?",
-			"Text": 
-			[ "How many times has the customer power cycled the device?"	],
-			"Buttons": 
-			[ ["3led_intermittent_connection__gateway__wired_checksplitter","Done"]	]
-		},
-		"3led_intermittent_connection__gateway__wired_checksplitter":
-		{
-			"Question":"Is there splitter, amplifier, switch, or damaged coax cable?",
-			"Text": 
-			[ "splitter, amplifier, switch, damaged coax cable, or none",
-			  "Is the ethernet cable Damaged?"
-			],
-			"Buttons": 
-			[ ["3led_intermittent_connection__gateway__wired_checkreboot","Done"]	]
-		},
+			"Text": ["<br>","***Provide Case Number for future reference."]
+		},		
 		"3led_intermittent_connection__gateway__wired_checkreboot":
 		{
 			"Question":"Does the ARRIS device reboot on its own?",
 			"Buttons": 
-			[ ["device_rebooting__device","Yes","gateway__wired"],
+			[ 
+				["device_rebooting__device","Yes","gateway__wired"],
 				["3led_intermittent_connection__gateway__wired_confirmcsl","No"]
 			]
 		},
 		"3led_intermittent_connection__gateway__wired_confirmcsl":
 		{
 			"Question":"Were Cable Signal Levels previously Checked by us in other case or note?",
+			"QuestionsTemplate":
+			[
+				"Case number: "
+			],
 			"Buttons": 
-			[ ["replace_unit","Yes"],
+			[ 
+				["replace_unit","Yes"],
 				["3led_intermittent_connection__gateway__wired_checkcsl","No"]
 			]
 		},
 		"3led_intermittent_connection__gateway__wired_checkcsl":
 		{
 			"Question": "Are the DS/US Power, SNR levels within an acceptable range?",
-			"Text": 
-			[	"Access GUI and Check Cable Signal Levels",
-				"***Copy and paste this form below: ",
-				" ►  Downstream Power Level: ",
-				" ►  Downstream SNR Level: ",
-				" ►  Upstream Power Level: "
-			],
-		
+			"Text": ["Access GUI and Check Cable Signal Levels"],
+			"QuestionsTemplate":
+			[
+				"Downstream Power Level: ",
+				"Downstream SNR Level: ",
+				"Upstream Power Level: "
+			],		
 			"Buttons": 
-			[ ["replace_unit","Yes"],
+			[ 
+				["replace_unit","Yes"],
 				["3led_factory_reset","No","checkcsl"]
 			]
 		},
 		"3led_intermittent_connection__gateway__wired_checkinrange":
 		{ 
 			"Question": "Cable signal levels are range now?",
-			"Text": 
-			[ "Enter on GUI and check cable signal levels, one more time",
-				"***Copy and paste this form below: ",
-				" ►  Downstream Power Level: ",
-				" ►  Downstream SNR Level: ",
-				" ►  Upstream Power Level: "
-				],
+			"Text": ["Enter on GUI and check cable signal levels, one more time"],
+			"QuestionsTemplate":
+			[
+				"Downstream Power Level: ",
+				"Downstream SNR Level: ",
+				"Upstream Power Level: "
+			],
 			"Buttons":
-			[ ["3led_intermittent_connection__gateway__affectiontype_monitorperformance","Yes"],
+			[ 
+				["3led_intermittent_connection__gateway__affectiontype_monitorperformance","Yes"],
 			  ["3led_slow_speed__gateway__adjustcsl","No"]
 			]
 		},
@@ -1248,10 +1233,6 @@
 				["led_behavior_without_coax","3led_factory_reset__led_behavior"],
 				["led_behavior_withcoax","3led_factory_reset__led_behavior"]
 			],
-			"Text": 
-			[ 
-				"Advise the costumer this behavior is not normal"
-			],
 			"Buttons":
 			[ 
 				["3led__led_behavior_disconnect_coax","Done"]
@@ -1260,12 +1241,10 @@
 		"3led__led_behavior_disconnect_coax":
 		{
 			"Question": "Disconnected the coax cable",
-			"Text": 
-			[ 
-				"Disconnect the coax cable on the modem"
-			],	
 			"Buttons" :
-			[ ["3led__led_behavior_reboot","Done"] ]	
+			[ 
+				["3led__led_behavior_reboot","Done"] 
+			]	
 		},
 		"3led__led_behavior_reboot":
 		{
@@ -1280,7 +1259,8 @@
 		{
 			"Comments": "Factory reset procedure",
 			"Question": "Perform a factory reset",
-			"Text": [
+			"Text": 
+			[
 				"***Type the reason of why the factory reset could not be perform ( if applicable )",
 				"***If it is a Gateway advise this action will erase all previous,",
 				"***connectivity configurations set by the cable provider",
@@ -1294,24 +1274,21 @@
 				["replace__led_behavior","replace_unit"]
 		  ],
 			"Buttons": 
-			[ ["3led__checkled","Done","replace__led_behavior"],
+			[ 
+				["3led__checkled","Done","replace__led_behavior"],
 			  ["3led__stop","No, Customer does not want to Factory reset  the unit"]
 			]
 		},
 		"3led__led_behavior_connect_coax":
 		{
 			"Question": "Connect coax cable and check if the behavior continue?",	
-			"Text": 
-			[ 
-				" ► Reconnect the coaxial cable and wait for the correct LEDs Status "	
-			],
+			"Text":	[" ► Reconnect the coaxial cable and wait for the correct LEDs Status "],
 			"Buttons" :
 			[ 
 				["3led__led_behavior","Yes, Behavior continue","led_behavior_withcoax"],
 				["3led__checkled","No, Behavior stop"]
 			]	
 		}
-
 
 
 
