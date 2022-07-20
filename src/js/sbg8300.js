@@ -339,7 +339,6 @@
 		"sbg8300_not_service_bridge": 
 		{
 			"Question": "Can the customer bypass the external router",
-			"QuestionsTemplate": ["Can the customer connect directly using a ethernet cable?"],
 			"Buttons": 
 			[	
 				["sbg8300_not_service_bypassrouter","Bypass the router"],
