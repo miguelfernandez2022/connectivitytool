@@ -279,7 +279,6 @@
 				"Disconnect coax cable",
 				"Swap coaxial cables",
 				"Check splitter condition",
-				"Move the device into a different location",
 				"Power Cycle the ARRIS Unit"
 			],
 			"Skips":
