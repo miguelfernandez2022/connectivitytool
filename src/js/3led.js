@@ -293,6 +293,7 @@
 			"Skips":
 			[ 
 				["toprovision","redirect_toprovision"],
+				["ThirdPartyRouter","3led_not_service__thirdpartymanufacturer"],
 			  ["3ledtoprovision","3led_redirect_toprovision"],
 				["toreplace_unit","replace_unit"]
 		  ],
@@ -319,6 +320,7 @@
 			],
 			"Skips":
 			[ 	
+				["ThirdPartyRouter","3led_not_service__thirdpartymanufacturer"],
 				["toreplace_unit","replace_unit"]
 			],
 			"Buttons": 
@@ -413,11 +415,10 @@
 		"3led_not_service_bridge": 
 		{
 			"Question": "Can the customer bypass the external router",
-			"QuestionsTemplate": ["Can the customer connect directly using a ethernet cable?"],
 			"Buttons": 
 			[	
 				["3led_not_service_bypassrouter","Bypass the router"],
-				["3led_not_service_unable_bypassrouter","Unable to bypass the router"]
+				["3led_not_service_unable_bypassrouter","Unable to bypass the router","ThirdPartyRouter"]
 			]
 		},
 		"3led_not_service_bypassrouter": 
@@ -489,6 +490,16 @@
 			[	
 				["resolved","Yes"],
 				["3led_not_service_check_ip_dns","No"]	
+			]
+		},
+		"3led_not_service__thirdpartymanufacturer":
+		{
+			"Question": "Redirect the Customer to Third Party Manufacturer",
+			"Text": 
+			[	
+				"<br>",
+				"***Suggest to acquire a device that could be connected Hardwired to the ARRIS and Call us Back",
+				"***Provide Case Number to Customer"
 			]
 		},
 
@@ -595,7 +606,7 @@
 			],
 			"Buttons": 
 			[ 
-				["3led_not_service_check_gui","192.168.0.*"], 
+				["3led_not_service_check_gui","192.168.*.*"], 
 				["3led_factory_reset","169.254.*.*"],
 				["3led_not_service_media_disconnected","Media disconnected","media_disconnected"] 
 			]
@@ -875,23 +886,22 @@
 		},
 		"3led_slow_speed__gateway_wifi__interference_powercycle":
 		{
-			"Question": "Power cycle the gateway",
-			"Text": ["Unplug the power cord from the AC outlet and wait one minute."],
-			"Buttons": 
+			"Question": "Power cycle the Gateway and check if the speed improved",
+			"Text": 
 			[
-				["3led_slow_speed__gateway_wifi__interference_check","Done"]
-			]
-		},
-		"3led_slow_speed__gateway_wifi__interference_check":
-		{
-			"Question": "Has the speed improved?",
-			"Text": ["Check the connection after the restart"],
-			"Buttons":
+				"Disconnect the power cord from the AC wall outlet and wait one minute",
+				"Check the connection after the restart"
+			],
+			"QuestionsTemplate":
+			[
+				"Speed test result:"
+			],
+			"Buttons": 
 			[
 				["resolved","Yes"],
 				["3led_slow_speed__gateway_wifi__interference_checkspeed","No"]
 			]
-		}, 
+		},
 		"3led_slow_speed__gateway_wifi__interference_checkspeed":
 		{
 			"Question": "Check the firewall configuration. Is speed still underperforming?",
@@ -953,7 +963,7 @@
 		{
 			"Comments":"Intermittent Connection procedure",
 			"Question":"Intermittent Connection procedure",
-			"Text": ["Verify with the customer when was the ARRIS device installed"],
+			"Text": ["Verify the following details"],
 			"Skips":
 			[	["checkcsl","3led_intermittent_connection__gateway__wired_checkinrange"],
 				["device_rebooting__gateway_replace","replace_unit"],

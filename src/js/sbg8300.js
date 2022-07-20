@@ -68,14 +68,12 @@
 		"sbg8300__hardware_fail": 
 		{
 			"Comments": "Power on hardware fail procedure", 
-			"Question": "Check the Ethernet port LED status",
-			"QuestionsTemplate": 
-			[
-				"Is the light on?: ",
-				"Is it green or yellow/amber?:"
-			],
+			"Question": "Is the Ethernet port LED on?",
+			"QuestionsTemplate": ["Is it green or yellow/amber?:"],
 			"Skips" : 
-			[	["replace", "replace_unit"]	],			
+			[	
+				["replace", "replace_unit"]	
+			],			
 			"Buttons" :
 			[	
 				["sbg8300__hardware_fail__poweroutlet", "Yes"],
@@ -138,7 +136,8 @@
 			"Comments": "This procedure is for first time setup",
 			"Question" : "Is this the first-time setup?",
 			"Text": 
-			["If this is first-time setup,", 
+			[
+				"If this is first-time setup,", 
 				"there is a higher chance the problem will be related to provisioning."
 			],
 			"Popmsg" : "If this is first-time setup, there is a higher chance the problem will be related to provisioning.",
@@ -147,7 +146,8 @@
 				["reprovision","redirect_toprovision"]
 			],
 			"Buttons" : 
-			[ ["sbg8300_other_modems","Yes","reprovision"],
+			[ 
+				["sbg8300_other_modems","Yes","reprovision"],
 			  ["sbg8300__check_connection", "No","reprovision"]
 			]
 		},
@@ -161,17 +161,19 @@
 			],
 
 			"Buttons" : 
-			[ ["sbg8300_check_activation", "Done"] ]
+			[ 
+				["sbg8300_check_activation", "Done"] 
+			]
 		},
 		"sbg8300_check_activation":
 		{
 			"Question": "Was the unit already activated with the ISP?",
 			"Text": ["Verify if the customer has already provided the HFC MAC ID to the service provider"],
 			"Buttons": 
-			[	["sbg8300_factory_reset","Yes"],
-			["self_activation_procedure","No"],
-			["self_activation_procedure","No, Comcast/Xfinity"]
-		]
+			[	
+				["sbg8300_factory_reset","Yes"],
+				["self_activation_procedure","No"]
+			]
 		},
 		"sbg8300_self_activation":
 		{
@@ -230,6 +232,7 @@
 			],
 			"Skips":
 			[
+				["ThirdPartyRouter","sbg8300_not_service__thirdpartymanufacturer"],
 				["toprovision","redirect_toprovision"]
 			],
 			"Buttons": 
@@ -252,7 +255,8 @@
 				"Restart Cable Modem or Reboot, or powercycle the modem"
 			],
 			"Skips":
-			[ 	
+			[ 
+				["ThirdPartyRouter","sbg8300_not_service__thirdpartymanufacturer"],	
 				["toreplace_unit","replace_unit"]
 			],
 			"Buttons": 
@@ -277,7 +281,6 @@
 				"Disconnect coax cable",
 				"Swap coaxial cables",
 				"Check splitter condition",
-				"Move the device into a different location",
 				"Power Cycle the ARRIS Unit"
 			],
 			"Skips":
@@ -340,11 +343,10 @@
 		"sbg8300_not_service_bridge": 
 		{
 			"Question": "Can the customer bypass the external router",
-			"QuestionsTemplate": ["Can the customer connect directly using a ethernet cable?"],
 			"Buttons": 
 			[	
 				["sbg8300_not_service_bypassrouter","Bypass the router"],
-				["sbg8300_not_service_unable_bypassrouter","Unable to bypass the router"]
+				["sbg8300_not_service_unable_bypassrouter","Unable to bypass the router","ThirdPartyRouter"]
 			]
 		},
 		"sbg8300_not_service_bypassrouter": 
@@ -415,6 +417,17 @@
 				["sbg8300_not_service_check_ip_dns","No"]
 			]
 		},
+		"sbg8300_not_service__thirdpartymanufacturer":
+		{
+			"Question": "Redirect the Customer to Third Party Manufacturer",
+			"Text": 
+			[	
+				"<br>",
+				"***Suggest to acquire a device that could be connected Hardwired to the ARRIS and Call us Back",
+				"***Provide Case Number to Customer"
+			]
+		},
+
 
 
 
@@ -510,7 +523,7 @@
 			],
 			"Buttons": 
 			[ 
-				["sbg8300_not_service_check_gui","192.168.0.*"], 
+				["sbg8300_not_service_check_gui","192.168.*.*"], 
 				["sbg8300_factory_reset","169.254.*.*"],
 				["sbg8300_not_service_media_disconnected","Media disconnected","media_disconnected"] 
 			]
@@ -617,23 +630,22 @@
 		},
 		"sbg8300_slow_speed_wifi__interference_powercycle":
 		{
-			"Question": "Power cycle the gateway",
-			"Text": ["Disconnect the power cord from the AC wall outlet and wait one minute"],
-			"Buttons": 
+			"Question": "Power cycle the Gateway and check if the speed improved",
+			"Text": 
 			[
-				["sbg8300_slow_speed_wifi__interference_check","Done"]
-			]
-		},
-		"sbg8300_slow_speed_wifi__interference_check":
-		{
-			"Question": "Has the speed improved?",
-			"Text": ["Check the connection after the restart"],
-			"Buttons":
+				"Disconnect the power cord from the AC wall outlet and wait one minute",
+				"Check the connection after the restart"
+			],
+			"QuestionsTemplate":
+			[
+				"Speed test result:"
+			],
+			"Buttons": 
 			[
 				["resolved","Yes"],
 				["sbg8300_slow_speed_wifi__interference_checkspeed","No"]
 			]
-		}, 
+		},
 		"sbg8300_slow_speed_wifi__interference_checkspeed":
 		{
 			"Question": "Check the firewall configuration. Is speed still underperforming?",
@@ -683,7 +695,7 @@
 		{
 			"Comments":"Intermittent Connection procedure",
 			"Question":"Intermittent Connection procedure",
-			"Text": ["Verify with the customer when was the ARRIS device installed"],
+			"Text": ["Verify the following details"],
 			"Skips":
 			[
 				["checkcsl","sbg8300_intermittent_connection__wired_checkinrange"]
