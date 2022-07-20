@@ -312,6 +312,7 @@
 			[
 				"The customer will need their Xfinity user ID,",
 				"or email address and/or their Xfinity password associated with the user ID email",
+				"Assist customer with self activation",
 				"***<a href='http://arris.force.com/consumers/articles/General_FAQs/Xfinity-Cable-Modem-Activation' target = '_blank'>Article link</a>"
 			],
 			
@@ -345,7 +346,7 @@
 		"cox_activation_procedure":
 		{
 			"Question": "Does the customer have the information required to complete self-activation?",
-			"Text": ["Article: 000017685"],			
+			"Text": ["Assist customer with self activation"],			
 			"Buttons" : 
 			[	
 				["cox_activation_procedure__confirm_self_activation", "Done"] 
@@ -354,7 +355,7 @@
 		"cox_activation_procedure__confirm_self_activation":
 		{
 			"Question": "Is activation successful?",
-			"Text": ["Follow Cox self-activation process"],			
+			"Text": ["Assist customer with self activation"],			
 			"Buttons" : 
 			[
 				["cox_activation_procedure__internet_working", "Yes"],
@@ -374,7 +375,7 @@
 		"spectrum_activation_procedure":
 		{
 			"Question": "Does the customer have the information required to complete self-activation?",
-			"Text": ["Article: 000017686"],			
+			"Text": ["Assist customer with self activation"],			
 			"Buttons" : 
 			[	
 				["spectrum_activation_procedure__confirm_self_activation", "Done"] 
