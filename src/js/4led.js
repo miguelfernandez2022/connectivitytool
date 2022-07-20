@@ -959,7 +959,7 @@
 		{
 			"Comments":"Intermittent Connection procedure",
 			"Question":"When was the ARRIS device installed?",
-			"Text": ["Verify with the customer when was the ARRIS device installed"],
+			"Text": ["Verify the following details"],
 			"Skips":
 			[	
 				["checkcsl","4led_intermittent_connection__gateway__wired_checkinrange"],

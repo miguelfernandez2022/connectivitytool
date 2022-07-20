@@ -931,7 +931,7 @@
 		{
 			"Comments":"Intermittent Connection procedure",
 			"Question":"Intermittent Connection procedure",
-			"Text": ["Verify with the customer when was the ARRIS device installed"],
+			"Text": ["Verify the following details"],
 			"Skips":
 			[	
 				["checkcsl","1led_intermittent_connection__gateway__wired_checkinrange"],
