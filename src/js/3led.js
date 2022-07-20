@@ -692,7 +692,8 @@
 				"Upstream Power Level: "
 			],
 			"Buttons": 
-			[ ["3led_factory_reset","Yes"],
+			[ 
+				["3led_factory_reset","Yes"],
 				["3led_slow_speed__modem__adjustcsl","No"]
 			]
 		},
@@ -932,7 +933,7 @@
 			[ 
 				"</br>",
 				"Suggest the customer to Change the device's Location in order to decrease,",
-				"Environmental Issue & Monitor Network's Performance for the next 24 hours,",
+				"Environmental Issue & Monitor Network's Performance for the next 24 hours.",
 				"Provide Case Number for future reference"
 			]
 		},

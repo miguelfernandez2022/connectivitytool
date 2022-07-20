@@ -681,32 +681,30 @@
 		"4led_slow_speed__modem_checkcsl":
 		{
 			"Question": "Are the DS/US Power, SNR levels within an acceptable range?",
-			"Text": 
-			[	"Access GUI and Check Cable Signal Levels",
-				"***Copy and paste this form below: ",
-				" ►  Downstream Power Level: ",
-				" ►  Downstream SNR Level: ",
-				" ►  Upstream Power Level: "
+			"Text":	["Access GUI and Check Cable Signal Levels"],
+			"QuestionsTemplate":
+			[
+				"Downstream Power Level: ",
+				"Downstream SNR Level: ",
+				"Upstream Power Level: "
 			],
 			"Buttons": 
-			[ ["4led_factory_reset","Yes"],
+			[ 
+				["4led_factory_reset","Yes"],
 				["4led_slow_speed__modem__adjustcsl","No"]
 			]
 		},
 		"4led_slow_speed__modem__adjustcsl":
 		{
 			"Question": "Redirect to internet service provider to adjust cable signal levels",
-			"Text":
-			[ 
-				"***Advise check with the service provider, the Cable Signal Status"
-			]
+			"Text":	["<br>","***Advise check with the service provider, the Cable Signal Status"]
 		},
 		"4led_slow_speed__modem_separeterouter":
 		{
 			"Question":"Which client devices are affected?",
-			"Text":[],
 			"Buttons":
-			[ ["4led_slow_speed__modem_separeterouter_allclients","All clients"],
+			[ 
+				["4led_slow_speed__modem_separeterouter_allclients","All clients"],
 				["4led_slow_speed__modem_separeterouter_someclients","Some clients"],
 				["4led_slow_speed__redirect_manufacturer","One client"]
 			]
@@ -715,7 +713,8 @@
 		{
 			"Question":"Can the customer directly connect a device to the modem? (Bypassing the router)",
 			"Buttons":
-			[ ["4led_slow_speed__modem_bypassrouter","Yes"],
+			[ 
+				["4led_slow_speed__modem_bypassrouter","Yes"],
 				["4led_slow_speed__modem_unable_bypassrouter","No"]
 			]
 		},
@@ -723,33 +722,48 @@
 		{
 			"Question": "Bypassing router",
 			"Text": 
-			[	"***Steps to bypass the router",
+			[	
+				"***Steps to bypass the router",
 				"► - Power off modem, router and pc.",
 				"► - Check if the ethernet cord is properly connected from the modem to the computer.",				
 				"► - Power on the modem only.",
 				"► - Once all the lights on the modem are solid, power on the pc.",
 				"► - Continue troubleshooting."],
-			"Buttons": 	[	["4led_slow_speed__modem_checkspeed","Done"] ]
+			"Buttons": 	
+			[	
+				["4led_slow_speed__modem_checkspeed","Done"] 
+			]
 		},
 		"4led_slow_speed__modem_unable_bypassrouter":
 		{
 			"Question": "Unable bypass the router",
 			"Text": 
-			[	"***Steps to power cycle the router:",
+			[	
+				"***Steps to power cycle the router:",
 				"► - Power off modem & router.",
 				"► - Check if the ethernet cord is properly connected from the modem to the router.",				
 				"► - Power on the modem only.",
 				"► - Once all the lights on the Modem are solid, power on the router.",
-				"► - Continue Troubleshooting."],
-			"Buttons": [	["4led_slow_speed__modem_checkgui","Done"] ]
+				"► - Continue Troubleshooting."
+			],
+			"Buttons": 
+			[	
+				["4led_slow_speed__modem_checkgui","Done"] 
+			]
 		},
 		"4led_slow_speed__modem_checkgui":
 		{
 			"Question": "Access GUI and check cable signal levels",
-			"Text": [	],
+			"QuestionsTemplate":
+			[
+				"Downstream Power Level: ",
+				"Downstream SNR Level: ",
+				"Upstream Power Level: "
+			],
 			"Buttons": 
-			[	["4led_slow_speed__modem_checkcsl","GUI Accessed"],
-			["4led_slow_speed__modem_nogui","Unable to access GUI"]
+			[	
+				["4led_slow_speed__modem_checkcsl","GUI Accessed"],
+				["4led_slow_speed__modem_nogui","Unable to access GUI"]
 			]
 		},
 		"4led_slow_speed__modem_nogui":
@@ -757,6 +771,7 @@
 			"Question": "Redirect the Customer to Third Party Manufacturer",
 			"Text": 
 			[	
+				"<br>",
 				"***Suggest to aquire a Device that could be connected Hardwired to the modem and Call us Back",
 				"***Provide Case Number to Customer"
 			]
@@ -765,7 +780,8 @@
 		{
 			"Question":"Power cycle the router. Did the speed improve?",
 			"Buttons":
-			[ ["4led_slow_speed__modem_checkspeed","Yes"],
+			[ 
+				["4led_slow_speed__modem_checkspeed","Yes"],
 				["4led_slow_speed__redirect_manufacturer","No"]
 			]
 		},
@@ -773,8 +789,13 @@
 		{
 			"Question": "Is the Internet Speed Still Underperforming?",
 			"Text":["Run a Speed Test on https://www.speedtest.net or fast.com"],
+			"QuestionsTemplate":
+			[
+				"Speed test result: "
+			],
 			"Buttons":
-			[	["4led_slow_speed__modem_checkcsl","Yes"],
+			[	
+				["4led_slow_speed__modem_checkcsl","Yes"],
 				["resolved","No"]
 			]
 		},
@@ -795,22 +816,24 @@
 		{
 			"Question": "Which clients are affected?",
 			"Buttons":
-			[ ["4led_slow_speed__redirect_manufacturer","Only one client"],
+			[ 
+				["4led_slow_speed__redirect_manufacturer","Only one client"],
 			  ["4led_slow_speed__gateway__checkcsl","All clients are affected"]
 			]
 		},
 		"4led_slow_speed__gateway__checkcsl":
 		{
 			"Question": "Are the DS/US Power, SNR levels within an acceptable range?",
-			"Text": 
-			[	"Access GUI and Check Cable Signal Levels",
-				"***Copy and paste this form below: ",
-				" ►  Downstream Power Level: ",
-				" ►  Downstream SNR Level: ",
-				" ►  Upstream Power Level: "
+			"Text": ["Access GUI and Check Cable Signal Levels"],
+			"QuestionsTemplate":
+			[
+				"Downstream Power Level: ",
+				"Downstream SNR Level: ",
+				"Upstream Power Level: "
 			],
 			"Buttons": 
-			[ ["4led_slow_speed__gateway__adjustcsl","No"],
+			[ 
+				["4led_slow_speed__gateway__adjustcsl","No"],
 				["4led_slow_speed__gateway__wifi_radio_interference","wi-fi, acceptable"],
 				["4led_slow_speed__gateway__wifi_congestion","wired - both, acceptable"]
 			]
@@ -818,17 +841,20 @@
 		"4led_slow_speed__gateway__adjustcsl":
 		{
 			"Question": "Redirect to Internet Service Provider to adjust Cable Signal Levels",
-			"Text":
-			[
-				"***Advise check with the service provider, the Cable Signal Status"
-			]
+			"Text": ["<br>","***Advise check with the service provider, the Cable Signal Status"]
 		},
 		"4led_slow_speed__gateway__wifi_radio_interference":
 		{
-			"Question": "2.4 GHz or 5 GHz radio experiencing problems?",
-			"Text": ["Are in range this networks?"],
+			"Question": "Are the 2.4 Ghz and/or 5 Ghz radio experiencing problems?",
+			"QuestionsTemplate":
+			[
+				"Check if the Device's Placement is correct: ",
+				"Number of nearby access points: ",
+				"Number of APs found per band: "
+			],
 			"Buttons":
-			[ ["4led_slow_speed__gateway_wifi__interference_onenetwork","Only one have interference"],
+			[ 
+				["4led_slow_speed__gateway_wifi__interference_onenetwork","Only one have interference"],
 				["4led_slow_speed__gateway_wifi__interference_checkspeed","Both have interreferrence"]
 			]
 		},
@@ -836,47 +862,75 @@
 		{
 			"Question": "Test the other network. Still under performing?",
 			"Text":["Guide to speedtes.net or fast.com and make an speed test"],
+			"QuestionsTemplate": ["Speed test result: "],
 			"Buttons":
-			[ ["4led_slow_speed__gateway_wifi__interference_powercycle","Yes"],
+			[ 
+				["4led_slow_speed__gateway_wifi__interference_powercycle","Yes"],
 			  ["4led_slow_speed__gateway__wifi_congestion","No"]
 			]
 		},
 		"4led_slow_speed__gateway_wifi__interference_powercycle":
 		{
 			"Question": "Power cycle the gateway",
-			"Text": ["Disconnect the power cord from the AC wall outlet and wait one minute"],
-			"Buttons": [["4led_slow_speed__gateway_wifi__interference_check","Done"]]
+			"Text": ["Unplug the power cord from the AC outlet and wait one minute."],
+			"Buttons": 
+			[
+				["4led_slow_speed__gateway_wifi__interference_check","Done"]
+			]
 		},
 		"4led_slow_speed__gateway_wifi__interference_check":
 		{
 			"Question": "Has the speed improved?",
 			"Text": ["Check the connection after the restart"],
-			"Buttons":[["resolved","Yes"],["4led_slow_speed__gateway_wifi__interference_checkspeed","No"]]
+			"Buttons":
+			[
+				["resolved","Yes"],
+				["4led_slow_speed__gateway_wifi__interference_checkspeed","No"]
+			]
 		}, 
 		"4led_slow_speed__gateway_wifi__interference_checkspeed":
 		{
 			"Question": "Check the firewall configuration. Is speed still underperforming?",
 			"Text": [ "Ask the customer to run a speed test on speedtest.com or fast.com"	],
-			"Buttons":[["4led_slow_speed__gateway__wifi_congestion","Yes"],["resolved","No"]]
+			"QuestionsTemplate": ["Speed test result: "],
+			"Buttons":
+			[
+				["4led_slow_speed__gateway__wifi_congestion","Yes"],
+				["resolved","No"]
+			]
 		},
 		"4led_slow_speed__gateway__wifi_congestion":
 		{
 			"Question": "Identify an environmental Issue?",
 			"Text": 
-			[ "Check if the Device's Placement is correct.",
-				"Check the Amount of Nearby Access Points and Change WiFi Channels to the Least Congested One.",
-				"Type on the Comment Field below the Amount of APs Found per Band"
+			[ 
+				"Relocate your wireless router away from nearby routers, appliances and dense building materials.",
+				"Unplug the appliances and devices when not in use.",
+				"Avoid using too many wireless gadgets at the same time within close proximity of each other.",
+				"Check the Amount of Nearby Access Points and Change Wi-Fi Channels to the Least Congested One."
 			],
-			"Buttons": [["4led_slow_speed__gateway__wifi_interference", "Yes"],["4led_factory_reset","No"]]
+			"QuestionsTemplate":
+			[
+				"Check if the Device's Placement is correct: ",
+				"Number of nearby access points: ",
+				"Number of APs found per band: ",
+				"Less congested Wi-Fi channels: "
+			],
+			"Buttons": 
+			[
+				["4led_slow_speed__gateway__wifi_interference", "Yes"],
+				["4led_factory_reset","No"]
+			]
 		},
 		"4led_slow_speed__gateway__wifi_interference":
 		{
 			"Question": "Device with high interference or congestion",
 			"Text":
-			[ "</br>",
+			[ 
+				"</br>",
 				"Suggest the customer to Change the device's Location in order to decrease,",
-				"Environmental Issue & Monitor Network's Performance for the next 24 hours,",
-				"provide Case Number for future reference"
+				"Environmental Issue & Monitor Network's Performance for the next 24 hours.",
+				"Provide Case Number for future reference"
 			]
 		},
 
@@ -897,19 +951,36 @@
 			"Question":"When was the ARRIS device installed?",
 			"Text": ["Verify with the customer when was the ARRIS device installed"],
 			"Skips":
-			[	["checkcsl","4led_intermittent_connection__gateway__wired_checkinrange"],
+			[	
+				["checkcsl","4led_intermittent_connection__gateway__wired_checkinrange"],
+				["device_rebooting__gateway_replace","replace_unit"],
 				["device_rebooting","4led_intermittent_connection__modem_confirmcsl"],
 				["checkcslmodem","4led_intermittent_connection__modem_checkinrange"]
 
 			],
-			"Buttons": [["4led_intermittent_connection__firstappeared","Done"]]
+			"Noteheight": "8rem",
+			"QuestionsTemplate":
+			[
+				"When was the ARRIS device installed?: ",
+				"When did the issue first appeared?: ",
+				"Any changes in the network when the issue started?: ",
+				"How often and what time of day does the issue occur?: ",
+				"Was a power cycle performed?: ",
+				"How many times has the customer power cycled the device?: ",
+				"Is there splitter, amplifier, switch, or damaged coax cable?: ",
+				"Is the ethernet cable Damaged?: "
+			],
+			"Buttons": 
+			[
+				["4led_intermittent_connection__firstappeared","Done"]
+			]
 		},
 		"4led_intermittent_connection__firstappeared":
 		{
-			"Question":"When did the issue first appeared?",
-			"Text": ["Verify with the customer when did the issue start"],
+			"Question":"Select device type",
 			"Buttons": 
-			[	["4led_intermittent_connection__modem","modem"],
+			[	
+				["4led_intermittent_connection__modem","modem"],
 				["4led_intermittent_connection__gateway","gateway"]
 			]
 		},
@@ -920,100 +991,86 @@
 		{
 			"Question":"Issue happening hardwired to the modem or through a Router?",
 			"Buttons": 
-			[	["4led_intermittent_connection__modem_throughrouter","Through Router"],
-				["4led_intermittent_connection__modem_networkissues","Hardwired"]
+			[	
+				["4led_intermittent_connection__modem_throughrouter","Through Router"],
+				["4led_intermittent_connection__modem_reboot","Hardwired"]
 			]
 		},
 		"4led_intermittent_connection__modem_throughrouter":
 		{
 			"Question":"Can you connect directly to the Modem, bypass Router?",
 			"Buttons": 
-			[	["4led_intermittent_connection__modem_networkissues","Yes"],
-				["4led_intermittent_connection__modem_networkissues","No"]
+			[	
+				["4led_intermittent_connection__modem_reboot","Yes"],
+				["4led_intermittent_connection__modem_reboot","No"]
 			]
-		},
-		"4led_intermittent_connection__modem_networkissues":
-		{
-			"Question":"Any changes in the network when the issue started?",
-			"Buttons": [	["4led_intermittent_connection__modem_daytime","Done"] ]
-		},
-		"4led_intermittent_connection__modem_daytime":
-		{
-			"Question":"How often and what time of day does the issue occur?",
-			
-			"Buttons": [	["4led_intermittent_connection__modem_powercycle","Done"]	]
-		},
-		"4led_intermittent_connection__modem_powercycle":
-		{
-			"Question":"Was a power cycle performed?",
-			
-			"Buttons": [	["4led_intermittent_connection__modem_checksplitter","Done"]	]
-		},
-		"4led_intermittent_connection__modem_checksplitter":
-		{
-			"Question":"Check Splitter, coax cable.",
-			"Text": 
-			[ "•Is there splitter, amplifier, switch, or damaged coax cable?",
-				"(splitter, amplifier, switch, damaged coax cable, or none)",
-				"Is the ethernet cable Damaged?"
-			],
-			"Buttons": [	["4led_intermittent_connection__modem_reboot","Done"]	]
-		},
+		},		
 		"4led_intermittent_connection__modem_reboot":
 		{
 			"Question":"Does the ARRIS device reboot on its own?",
 			
 			"Buttons": 
-			[ ["4led_intermittent_connection__modem_rebooting_steps","Yes"],
+			[ 
+				["4led_intermittent_connection__modem_rebooting_steps","Yes"],
 				["4led_intermittent_connection__modem_confirmcsl","No"]	
 			]
 		},
 		"4led_intermittent_connection__modem_rebooting_steps":
 		{
-			"Question":"Disconnect coax cable, is the device still rebooting on its own even with the coax out?",
-			
+			"Question":"Disconnect coax cable",
+			"QuestionsTemplate":
+			[
+				"Is the device still rebooting on its own even with the coax out?: "
+			],
 			"Buttons": 
-			[ ["device_rebooting__device","Yes","rebooting__coax__out","device_rebooting","modem","group4led"],
+			[ 
+				["device_rebooting__device","Yes","rebooting__coax__out","device_rebooting","modem","group4led"],
 				["4led_intermittent_connection__modem_confirmcsl","No"]	
 			]
 		},
 		"4led_intermittent_connection__modem_confirmcsl":
 		{
 			"Question":"Were Cable Signal Levels previously Checked by us in other case or note?",
-			
+			"QuestionsTemplate":
+			[
+				"Case number: "
+			],
 			"Buttons": 
-			[ ["replace_unit","Yes"],
+			[ 
+				["replace_unit","Yes"],
 				["4led_intermittent_connection__modem_checksl","No"]	
 			]
 		},
 		"4led_intermittent_connection__modem_checksl":
 		{
 			"Question": "Are the DS/US Power, SNR levels within an acceptable range?",
-			"Text": 
-			[ "Enter on GUI and check cable signal levels, one more time",
-				"***Copy and paste this form below: ",
-				" ►  Downstream Power Level: ",
-				" ►  Downstream SNR Level: ",
-				" ►  Upstream Power Level: "
+			"Text":	["Enter on GUI and check cable signal levels, one more time"],
+			"QuestionsTemplate":
+				[
+					"Downstream Power Level: ",
+					"Downstream SNR Level: ",
+					"Upstream Power Level: "
 				],
 			"Buttons": 
-			[ ["replace_unit","In range"],
-			["4led_intermittent_connection__modem_csl_inrange_through_router","In range, Through Router"],	
-			["4led_factory_reset","Not in range","checkcslmodem"]	
+			[ 
+				["replace_unit","In range"],
+				["4led_intermittent_connection__modem_csl_inrange_through_router","In range, Through Router"],	
+				["4led_factory_reset","Not in range","checkcslmodem"]	
 			]
 		},
 		"4led_intermittent_connection__modem_checkinrange":
 		{
 			"Question": "Are the DS/US Power, SNR levels within an acceptable range?",
-			"Text": 
-			[ "Enter on GUI and check cable signal levels, one more time",
-				"***Copy and paste this form below: ",
-				" ►  Downstream Power Level: ",
-				" ►  Downstream SNR Level: ",
-				" ►  Upstream Power Level: "
+			"Text":	["Enter on GUI and check cable signal levels, one more time"],
+			"QuestionsTemplate":
+				[
+					"Downstream Power Level: ",
+					"Downstream SNR Level: ",
+					"Upstream Power Level: "
 				],
 			"Buttons": 
-			[ ["4led_intermittent_connection__modem_monitorperformance","In range"],
+			[ 
+				["4led_intermittent_connection__modem_monitorperformance","In range"],
 				["4led_slow_speed__modem__techvisit","Not in range"]
 			]
 		},
@@ -1029,21 +1086,20 @@
 		"4led_intermittent_connection__modem_redirect_manufacturer":
 		{
 			"Question": "Redirect to 3rd party manufacturer.",
-			"Text": ["Offer AA if applicacble"]
+			"Text": ["<br>","Offer AA if applicacble"]
 		},
 		"4led_slow_speed__modem__techvisit":
 		{
 			"Question": "Redirect to Internet Service Provider to adjust Cable Signal Levels",
-			"Text":
-			[ 
-				"***Ask for a Tech's Visit to Adjust Cable Signal Levels"
-			]
+			"Text": ["<br>","***Ask for a Tech's Visit to Adjust Cable Signal Levels"]
 		},
 		"4led_intermittent_connection__modem_monitorperformance":
 		{
 			"Question": "Monitor Network's Performance",
 			"Text": 
-			[ "***For the Next 24 hours,Monitor Network's Performance,",
+			[ 
+				"<br>",
+				"For the Next 24 hours,Monitor Network's Performance,",
 				"***Provide case number for future reference"
 			]
 		},
@@ -1056,75 +1112,53 @@
 		{
 			"Question":"Which type of clients are experiencing issues on the network?",
 			"Text": ["i.e Wi-Fi laptop, Wi-Fi printer, Wired gaming console, iPhone"],
-			"Buttons": [["4led_intermittent_connection__gateway__affectiontype","Done"]]
+			"Buttons": 
+			[
+				["4led_intermittent_connection__gateway__affectiontype","Done"]
+			]
 		},
 		"4led_intermittent_connection__gateway__affectiontype":
 		{
 			"Question":"Is the issue affecting hardwired connection, via WiFi or both?",
 			"Text": 
-			[ "If customer does not know if it happens Hardwired,",
+			[ 
+				"If customer does not know if it happens Hardwired,",
 				"as well please connect a pc hardwired to monitor performance."
 			],
 			"Buttons": 
-			[ ["4led_intermittent_connection__gateway__affectiontype_wifi","Wi-Fi"],
-				["4led_intermittent_connection__gateway__affectiontype_wired","Wired - Both"]
+			[ 
+				["4led_intermittent_connection__gateway__affectiontype_wifi","Wi-Fi"],
+				["4led_intermittent_connection__gateway__wired_checkreboot","Wired - Both"]
 			]
 		},
 		"4led_intermittent_connection__gateway__affectiontype_wifi":
 		{
 			"Question":"Has the customer already contacted us?",
 			"Text": 
-			[ "Check if the Device's Placement is correct.",
+			[ 
+				"Check if the Device's Placement is correct.",
 				"Check the amount of nearby access points and change wifi channels to the least congested one.",
 				"Type on the comment field below the amount of APs found per band",
 				"Changed wifi channels, device's location and monitored performance?"	
 			],
+			"QuestionsTemplate":
+			[
+				"Case number: ",
+				"Amount of APs Found per Band: ",
+				"Wi-Fi channel least congested: ",
+				"Changed Wi-Fi channels: ",
+				"Device's location: "
+			],
 			"Buttons": 
-			[ ["replace_unit","Yes"],
+			[ 
+				["replace_unit","Yes"],
 				["4led_intermittent_connection__gateway__affectiontype_monitorperformance","No"]
 			]
 		},
 		"4led_intermittent_connection__gateway__affectiontype_monitorperformance":
 		{
 			"Question":"Monitor Network's Performance for the Next 24 hours",
-			"Text": 
-			[ 
-				"***Provide Case Number for future reference."
-			]
-		},
-		"4led_intermittent_connection__gateway__affectiontype_wired":
-		{
-			"Question":"Any changes in the network when the issue started?",
-			"Text": 
-			[ " "	],
-			"Buttons": 
-			[ ["4led_intermittent_connection__gateway__wired_issueoccur","Done"] ]
-		},
-		"4led_intermittent_connection__gateway__wired_issueoccur":
-		{
-			"Question":"How often and what time of day does the issue occur?",
-			"Text": 
-			[ " "	],
-			"Buttons": 
-			[ ["4led_intermittent_connection__gateway__wired_powercycle","Done"]	]
-		},
-		"4led_intermittent_connection__gateway__wired_powercycle":
-		{
-			"Question":"Was a power cycle performed?",
-			"Text": 
-			[ "How many times has the customer power cycled the device?"	],
-			"Buttons": 
-			[ ["4led_intermittent_connection__gateway__wired_checksplitter","Done"]	]
-		},
-		"4led_intermittent_connection__gateway__wired_checksplitter":
-		{
-			"Question":"Is there splitter, amplifier, switch, or damaged coax cable?",
-			"Text": 
-			[ "splitter, amplifier, switch, damaged coax cable, or none",
-			  "Is the ethernet cable Damaged?"
-			],
-			"Buttons": 
-			[ ["4led_intermittent_connection__gateway__wired_checkreboot","Done"]	]
+			"Text": ["<br>","***Provide Case Number for future reference."]
 		},
 		"4led_intermittent_connection__gateway__wired_checkreboot":
 		{
@@ -1137,39 +1171,45 @@
 		"4led_intermittent_connection__gateway__wired_confirmcsl":
 		{
 			"Question":"Were Cable Signal Levels previously Checked by us in other case or note?",
+			"QuestionsTemplate":
+			[
+				"Case number: "
+			],
 			"Buttons": 
-			[ ["replace_unit","Yes"],
+			[ 
+				["replace_unit","Yes"],
 				["4led_intermittent_connection__gateway__wired_checkcsl","No"]
 			]
 		},
 		"4led_intermittent_connection__gateway__wired_checkcsl":
 		{
 			"Question": "Are the DS/US Power, SNR levels within an acceptable range?",
-			"Text": 
-			[	"Access GUI and Check Cable Signal Levels",
-				"***Copy and paste this form below: ",
-				" ►  Downstream Power Level: ",
-				" ►  Downstream SNR Level: ",
-				" ►  Upstream Power Level: "
-			],
-		
+			"Text": ["Access GUI and Check Cable Signal Levels"],
+			"QuestionsTemplate":
+			[
+				"Downstream Power Level: ",
+				"Downstream SNR Level: ",
+				"Upstream Power Level: "
+			],			
 			"Buttons": 
-			[ ["replace_unit","Yes"],
+			[ 
+				["replace_unit","Yes"],
 				["4led_factory_reset","No","checkcsl"]
 			]
 		},
 		"4led_intermittent_connection__gateway__wired_checkinrange":
 		{ 
 			"Question": "Cable signal levels are range now?",
-			"Text": 
-			[ "Enter on GUI and check cable signal levels, one more time",
-				"***Copy and paste this form below: ",
-				" ►  Downstream Power Level: ",
-				" ►  Downstream SNR Level: ",
-				" ►  Upstream Power Level: "
-				],
+			"Text": ["Enter on GUI and check cable signal levels, one more time"],
+			"QuestionsTemplate":
+			[
+				"Downstream Power Level: ",
+				"Downstream SNR Level: ",
+				"Upstream Power Level: "
+			],
 			"Buttons":
-			[ ["4led_intermittent_connection__gateway__affectiontype_monitorperformance","Yes"],
+			[ 
+				["4led_intermittent_connection__gateway__affectiontype_monitorperformance","Yes"],
 			  ["4led_slow_speed__gateway__adjustcsl","No"]
 			]
 		},
@@ -1190,10 +1230,6 @@
 				["led_behavior_without_coax","4led_factory_reset__led_behavior"],
 				["led_behavior_withcoax","4led_factory_reset__led_behavior"]
 			],
-			"Text": 
-			[ 
-				"Advise the costumer this behavior is not normal"
-			],
 			"Buttons":
 			[ 
 				["4led__led_behavior_disconnect_coax","Done"]
@@ -1202,12 +1238,10 @@
 		"4led__led_behavior_disconnect_coax":
 		{
 			"Question": "Disconnected the coax cable",
-			"Text": 
-			[ 
-				"Disconnect the coax cable on the modem"
-			],	
 			"Buttons":
-			[ ["4led__led_behavior_reboot","Done"] ]	
+			[ 
+				["4led__led_behavior_reboot","Done"] 
+			]	
 		},
 		"4led__led_behavior_reboot":
 		{
@@ -1222,7 +1256,8 @@
 		{
 			"Comments": "Factory reset procedure",
 			"Question": "Perform a factory reset",
-			"Text": [
+			"Text": 
+			[
 				"***Type the reason of why the factory reset could not be perform ( if applicable )",
 				"***If it is a Gateway advise this action will erase all previous,",
 				"***connectivity configurations set by the cable provider",
@@ -1236,27 +1271,21 @@
 				["replace__led_behavior","replace_unit"]
 		  ],
 			"Buttons": 
-			[ ["4led__checkled","Done","replace__led_behavior"],
+			[ 
+				["4led__checkled","Done","replace__led_behavior"],
 			  ["4led__stop","No, Customer does not want to Factory reset  the unit"]
 			]
 		},
 		"4led__led_behavior_connect_coax":
 		{
 			"Question": "Connect coax cable and check if the behavior continue?",	
-			"Text": 
-			[ 
-				" ► Reconnect the coaxial cable and wait for the correct LEDs Status "	
-			],
+			"Text": [" ► Reconnect the coaxial cable and wait for the correct LEDs Status "],
 			"Buttons":
 			[ 
 				["4led__led_behavior","Yes, Behavior continue","led_behavior_withcoax"],
 				["4led__checkled","No, Behavior stop"]
 			]	
 		}
-
-
-
-
 
 
 
