@@ -159,7 +159,7 @@
 			[ 
 				["3led__check_tvconnection","Yes, TV working","reset"],
 				[ "checksignal","Yes, TV not working"],
-				["3led__check_tvconnection","Not TV suscription","reset"]
+				["3led__check_tvconnection","Not TV subscription","reset"]
 			]	
 		},
 		"3led__check_tvconnection": 

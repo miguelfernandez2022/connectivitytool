@@ -1,5 +1,6 @@
 {
-  "comments" : [
+  "comments" : 
+	[
 		"Provisioning flowchart",
 		"Beta Version review 0.1",
 		"UI Modify by Miguel Alejandro Fernandez, ARRIS Tier 1 Support Costa Rica.",
@@ -32,10 +33,8 @@
 			"Popmsg" : "Use this tool whenever you need to troubleshoot a device with technical issues, this tool will provide guidance and help to educate customers on the issue reported for wired or wireless connection." ,
 			"Text" : 
 			[
-				"***This tool applies to SURFboard products with slow/no internet access"
-				
+				"***This tool applies to SURFboard products with slow/no internet access"				
 			],
-
 			"QuestionsTemplate": 
 			[
 				"When did the issue first appear?: ", 
