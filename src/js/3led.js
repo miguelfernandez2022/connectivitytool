@@ -377,10 +377,7 @@
 		"3led_service_status":
 		{
 			"Question": "Is the Customer experiencing Connectivity Issues?",
-			"Text": 
-			[
-				"***Slow Speed or Intermittent Connection"				
-			],
+			"Text":	["***Slow Speed or Intermittent Connection"],
 			"QuestionsTemplate":
 			[
 				"When start the issue?: "
@@ -395,7 +392,7 @@
 		"3led_not_service_bypass":
 		{
 			"Question": "How is the customer connected to the modem?",
-			"QuestionTemplate":
+			"QuestionsTemplate":
 			[
 				"Can the customer connect directly using a ethernet cable?"
 			],
@@ -552,7 +549,8 @@
 		{
 			"Question": "Have access to GUI with the Coax Disconnected?",
 			"Text": 
-			[ "***Disconnect the coax cable on the modem",
+			[ 
+				"***Disconnect the coax cable on the modem",
 			  " ► Restart the modem with the Coaxial cable disconnected.",
 				" ► Try accessing the GUI while hardwired to a computer"
 			],

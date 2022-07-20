@@ -64,7 +64,8 @@
 			"Comments": "Power on hardware fail procedure", 
 			"Question": "Perform a factory reset.",
 			"Text" : 
-			[ "If it is a Gateway advise this action will erase all previous connectivity configurations set by the cable provider",
+			[ 
+				"If it is a Gateway advise this action will erase all previous connectivity configurations set by the cable provider",
 				"and erases all custom configurations set up by the user.",
 				"Or provisioning errors stored in the modem that could prevent the modem from locking into the correct channels.",
 				"For SBG series, hold the reset button for at least 20 seconds and release it", 
@@ -75,9 +76,13 @@
 				"Review applicable articles"
 			],
 			"Skips" : 
-			[	["replace", "replace_unit"]	],			
+			[	
+				["replace", "replace_unit"]	
+			],			
 			"Buttons" :
-			[	["4led__checkled", "Factory reset modem", "replace"]	]
+			[	
+				["4led__checkled", "Factory reset modem", "replace"]
+			]
 		},
 
 
@@ -91,45 +96,44 @@
 			"Comments": "This procedure is for first time setup",
 			"Question" : "Is this first-time setup?",
 			"Text": 
-			["If this is first-time setup,", 
+			[
+				"If this is first-time setup,", 
 				"there is a higher chance the problem will be related to provisioning."
 			],
 			"Popmsg" : "If this is first-time setup, there is a higher chance the problem will be related to provisioning.",
 			"Skips" : 
 			[
 				["reprovision","redirect_toprovision"]
-
 			],
 			"Buttons" : 
-			[ ["4led_other_modems","Yes","reprovision"],
+			[ 
+				["4led_other_modems","Yes","reprovision"],
 			  ["4led__check_connection", "No","reprovision"]
 			]
 		},
-		"4led_other_modems" : {
-			"Question" : "Disconnect Previous modem from the network",
-			
+		"4led_other_modems" : 
+		{
+			"Question" : "Disconnect Previous modem from the network",			
 			"Text": 
 			[
 				"If the previous modem is still connected to the network,",
 				"disconnect and restart the new modem",
 				"If it is a new house, check the coax outlet on the wall"
 			],
-
 			"Buttons" : 
-			[ ["4led_check_activation", "Done"] ]
+			[ 
+				["4led_check_activation", "Done"] 
+			]
 		},
 		"4led_check_activation":
 		{
 			"Question": "Was the unit already activated with the ISP?",
 			"Text": ["Verify if the customer has already provided the HFC MAC ID to the service provider"],
 			"Buttons": 
-			[	["4led_factory_reset","Yes"],
-			["self_activation_procedure","No"]
+			[	
+				["4led_factory_reset","Yes"],
+				["self_activation_procedure","No"]
 		]
-		},
-		"4led_self_activation":
-		{
-			"Question": "Call Service Provider Page Procedure"
 		},
 
 
@@ -151,7 +155,9 @@
 			],
 
 			"Buttons" :
-			[ ["4led__check_tvconnection","Yes, TV working","reset"],[ "checksignal","Yes, TV not working"],
+			[ 
+				["4led__check_tvconnection","Yes, TV working","reset"],
+				[ "checksignal","Yes, TV not working"],
 				["4led__check_tvconnection","Not TV suscription","reset"]
 			]	
 		},
@@ -160,15 +166,22 @@
 			"Question": "Troubleshoot physical connections and Power Cycle the ARRIS Unit",
 			"Text": ["Troubleshoot physical connections and Power Cycle the ARRIS Unit"],
 			"Skips":
-			[["toreset","4led_factory_reset"]],
-			"Buttons" : [["4led__checkled","Done","toreset"]]
+			[
+				["toreset","4led_factory_reset"]
+			],
+			"Buttons" : 
+			[
+				["4led__checkled","Done","toreset"]
+			]
 		},
 		"4led_not_internet_access__checkcables":
 		{
 			"Question": "Physical connections corrected and properly connected?",
 			"Text": ["Troubleshoot physical connections"],
 			"Buttons" :
-			[ ["4led_not_internet_access__checkgui","Done"] ]	
+			[ 
+				["4led_not_internet_access__checkgui","Done"] 
+			]	
 		},
 		"4led_not_internet_access__checkgui":
 		{
@@ -179,16 +192,17 @@
 				["tocheckgui","4led_redirect_toprovision__factoryreset"]
 			],				
 			"Buttons" :
-			[ ["4led_not_internet_access__checkfirsttime","Yes","tocheckgui"],
+			[ 
+				["4led_not_internet_access__checkfirsttime","Yes","tocheckgui"],
 			  ["4led_not_internet_access__nogui","No","tocheckgui"]
 		  ]	
 		},
 		"4led_not_internet_access__checkfirsttime":
 		{
-			"Question": "Is this the ARRIS device's first time setup/installation?",
-			"Text": [],			
+			"Question": "Is this the ARRIS device's first time setup/installation?",		
 			"Buttons" :
-			[ ["4led_factory_reset","Yes","tocheckgui"],
+			[ 
+				["4led_factory_reset","Yes","tocheckgui"],
 			  ["4led_not_internet_access__checkfirsttime_reboot","No","tocheckgui"]
 		  ]	
 		},
@@ -196,19 +210,30 @@
 		{
 			"Question": "Power Cycle the ARRIS Unit",	
 			"Buttons" :
-			[ ["4led__checkled","Done","provision_remotly"] ]	
+			[ 
+				["4led__checkled","Done","provision_remotly"] 
+			]	
 		},
 		"4led_redirect_toprovision":
 		{
 			"Question": "Have we already redirected the Customer to try provising again?",
 			"Text": 
-			[	"***There MUST be an existing case or note where the customer",
+			[	
+				"***There MUST be an existing case or note where the customer",
 				"***was already redirected to the Service Provider from our end."
 			],
-			"Skips":[["toreplace_unit","replace_unit"]],			
-			"Buttons": [["4led_redirect_toprovision__factoryreset","Yes"],["provision_remotly","No"]]
+			"Skips":
+			[
+				["toreplace_unit","replace_unit"]
+			],			
+			"Buttons": 
+			[
+				["4led_redirect_toprovision__factoryreset","Yes"],
+				["provision_remotly","No"]
+			]
 		},
-		"provision_remotly" : {
+		"provision_remotly" : 
+		{
 			"Question" : "Redirect to service provider for Address internetconnectivity.",
 			"Text":
 			[
@@ -219,18 +244,28 @@
 		"4led_redirect_toprovision__factoryreset":
 		{
 			"Question": "Was a FR performed before?",			
-			"Buttons": [["replace_unit","Yes"],["4led_factory_reset","No"]]
+			"Buttons": 
+			[
+				["replace_unit","Yes"],
+				["4led_factory_reset","No"]
+			]
 		},
 		"4led_not_internet_access__nogui":
 		{
 			"Question": "Troubleshoot web interface access",
 			"Text": 
-			["Guide the customer to troubleshoot the web interface access",
+			[
+				"Guide the customer to troubleshoot the web interface access",
 				"Suggest a factory reset solution"
 			],
-			"Skips":[["nogui","replace_unit"]],
+			"Skips":
+			[
+				["nogui","replace_unit"]
+			],
 			"Buttons" :
-			[ ["4led_not_internet_access__checkgui","Done","nogui"] ]
+			[ 
+				["4led_not_internet_access__checkgui","Done","nogui"] 
+			]
 		},
 
 
@@ -245,7 +280,8 @@
 			"Comments": "Factory reset procedure",
 			"Question": "Perform a factory reset",
 			"Popmsg": "Complete here",
-			"Text": [
+			"Text": 
+			[
 				"***Type the reason of why the factory reset could not be perform ( if applicable )",
 				"***If it is a Gateway advise this action will erase all previous,",
 				"***connectivity configurations set by the cable provider",
@@ -262,7 +298,8 @@
 
 		  ],
 			"Buttons": 
-			[ ["4led__checkled","Done","4ledtoprovision","toprovision","toreplace_unit"],
+			[ 
+				["4led__checkled","Done","4ledtoprovision","toprovision","toreplace_unit"],
 			  ["4led__stop","No, Customer does not want to Factory reset  the unit"]
 			]
 		},
@@ -271,7 +308,8 @@
 			"Comments": "Factory reset procedure",
 			"Question": "Perform a factory reset to the Arris device",
 			"Popmsg": "Complete here",
-			"Text": [
+			"Text": 
+			[
 				"***Type the reason of why the factory reset could not be perform ( if applicable )",
 				"***If it is a Gateway advise this action will erase all previous,",
 				"***connectivity configurations set by the cable provider",
@@ -285,7 +323,8 @@
 				["toreplace_unit","replace_unit"]
 		  ],
 			"Buttons": 
-			[ ["4led__checkled","Done","toreplace_unit"],
+			[ 
+				["4led__checkled","Done","toreplace_unit"],
 			  ["4led__stop","No, Customer does not want to Factory reset  the unit"]
 			]
 		},
@@ -297,12 +336,18 @@
 		{
 			"Question": "Troubleshoot physical connections and Power Cycle the ARRIS Unit",
 			"Text": 
-			[ "Troubleshoot physical connections and Power Cycle the ARRIS Unit",
+			[ 
+				"Troubleshoot physical connections and Power Cycle the ARRIS Unit",
 				"Check if GUI's Login Page is Reachable."
 			],
 			"Skips":
-			[["toreset","4led_factory_reset"]],
-			"Buttons" : [["4led__checkled","Done","toreset"]]
+			[
+				["toreset","4led_factory_reset"]
+			],
+			"Buttons" : 
+			[
+				["4led__checkled","Done","toreset"]
+			]
 		},
 
 
@@ -318,23 +363,35 @@
 		{
 			"Comments": "Not service procedure",
 			"Question": "Can customer get online?",
-			"Text": ["Verify if the customer has internet access, ask them to go to any website, such as cnn.com/foxnews.com"],
-			"Skips":
-			[
-				
+			"Text": 
+			[	"Verify if the customer has internet access,",
+				" ask them to go to any website, such as cnn.com/foxnews.com"
 			],
-			"Buttons": [["4led_service_status","Yes"],["4led_not_service_bypass","No"]]
+			"Buttons": 
+			[
+				["4led_service_status","Yes"],
+				["4led_not_service_bypass","No"]
+			]
 		},
 		"4led_service_status":
 		{
 			"Question": "Is the Customer experiencing Connectivity Issues?",
-			"Text": ["***Slow Speed or Intermittent Connection","When start the issue"],
-			"Buttons": [["resolved","No"],["4led_slow_speed","Yes, slow speed"],["4led_intermittent_connection","Yes, intermittent connection"]]
+			"Text": ["***Slow Speed or Intermittent Connection"],
+			"QuestionsTemplate":
+			[
+				"When start the issue?: "
+			],
+			"Buttons": 
+			[
+				["resolved","No"],
+				["4led_slow_speed","Yes, slow speed"],
+				["4led_intermittent_connection","Yes, intermittent connection"]
+			]
 		},
 		"4led_not_service_bypass":
 		{
 			"Question": "How is the customer connected to the modem?",
-			"Text": ["***Can the customer connect directly using a ethernet cable?"],
+			"QuestionsTemplate": ["Can the customer connect directly using a ethernet cable?"],
 			"Skips":
 			[
 				["media_disconnected","4led_factory_reset_media_disconnected"],
@@ -342,7 +399,8 @@
 				["isp_activation","self_activation_procedure"]
 			],
 			"Buttons": 
-			[	["4led_not_service_checkinternet","Hardwired Modem","bypassReset"],
+			[	
+				["4led_not_service_checkinternet","Hardwired Modem","bypassReset"],
 				["4led_not_service_checkinternet","Hardwired Gateway","bypassReset"],
 				["4led_not_service_checkinternet","Wi-Fi","bypassReset"],
 				["4led_not_service_bridge","Gateway in bridge mode"]
@@ -351,9 +409,10 @@
 		"4led_not_service_bridge": 
 		{
 			"Question": "Can the customer bypass the external router",
-			"Text": ["***Can the customer connect directly using a ethernet cable?"],
+			"QuestionsTemplate": ["Can the customer connect directly using a ethernet cable?"],
 			"Buttons": 
-			[	["4led_not_service_bypassrouter","Bypass the router"],
+			[	
+				["4led_not_service_bypassrouter","Bypass the router"],
 				["4led_not_service_unable_bypassrouter","Unable to bypass the router"]
 			]
 		},
@@ -361,34 +420,44 @@
 		{
 			"Question": "Bypassing router",
 			"Text": 
-			[	"***Steps to Bypass the router",
+			[
+					"***Steps to Bypass the router",
 				"► - Power off modem, router and pc.",
 				"► - Check if the ethernet cord is properly connected from the modem to the computer.",				
 				"► - Power on the modem only.",
 				"► - Once all the lights on the modem are solid, power on the pc.",
-				"► - Continue troubleshooting."],
+				"► - Continue troubleshooting."
+			],
 			"Buttons": 
-			[	["4led_not_service_checkinternet","Done"]
+			[	
+				["4led_not_service_checkinternet","Done"]
 			]
 		},
 		"4led_not_service_unable_bypassrouter":
 		{
 			"Question": "Unable bypass the router",
 			"Text": 
-			[	"***Steps to power cycle the router:",
+			[	
+				"***Steps to power cycle the router:",
 				"► - Power off modem & router.",
 				"► - Check if the ethernet cord is properly connected from the modem to the router.",				
 				"► - Power on the modem only.",
 				"► - Once all the lights on the Modem are solid, power on the router.",
-				"► - Continue Troubleshooting."],
+				"► - Continue Troubleshooting."
+			],
 			"Buttons": 
-			[	["4led_not_service_checkinternet","Done"]
+			[
+					["4led_not_service_checkinternet","Done"]
 			]
 		},
 		"4led_not_service_checkinternet":
 		{
 			"Question": "Try accessing a website. Can the customer get online?",
-			"Text": ["Verify if the customer has internet access, ask them to go to any website, such as cnn.com/foxnews.com"],			
+			"Text": 
+			[
+				"Verify if the customer has internet access,",
+				"ask them to go to any website, such as cnn.com/foxnews.com"
+			],
 			"Buttons": 
 			[
 				["4led_not_service_online","Yes"],
@@ -399,7 +468,10 @@
 		{
 			"Question": "Is this the first time setup?",
 			"Text": ["There is a higher chance the problem will be related to provisioning."],
-			"Skips":[ ["checkIP","4led_not_service_check_ip_dns"] ],
+			"Skips":
+			[ 
+				["checkIP","4led_not_service_check_ip_dns"] 
+			],
 			"Buttons": 
 			[ 
 				["4led_other_modems", "Yes","isp_activation"],
@@ -410,7 +482,11 @@
 		{
 			"Question": "Can the customer connect to internet through Wi-Fi?",
 			"Text": ["Can the customer connect to internet through Wi-Fi?"],
-			"Buttons":[	["resolved","Yes"],["4led_not_service_check_ip_dns","No"]	]
+			"Buttons":
+			[	
+				["resolved","Yes"],
+				["4led_not_service_check_ip_dns","No"]	
+			]
 		},
 
 
@@ -428,48 +504,79 @@
 			"Comments": "Procedure for check the IP, DNS",
 			"Question": "Can the customer access the modem GUI?",
 			"Text": 
-			[ " ► Check the IP address on the device",
+			[ 
+				" ► Check the IP address on the device",
 				" ► You can use any device, for check the ip segment 192.168.*.*"
 			],
+			"QuestionsTemplate":
+			[
+				"IP address: ",
+				"DNS address: "
+			],
 			"Skips":
-			[["checkIPreset","4led_factory_reset"]],
-			"Buttons": [ ["4led_factory_reset","Yes","checkIPreset"], ["4led_not_service_ping","No"] ]
+			[
+				["checkIPreset","4led_factory_reset"]
+			],
+			"Buttons": 
+			[ 
+				["4led_factory_reset","Yes","checkIPreset"], 
+				["4led_not_service_ping","No"] 
+			]
 		},
 		"4led_not_service_ping":
 		{
 			"Question": "Make a ping procedure [ or tracert, only applicable on windows terminal ]",
 			"Text": 
-			[ " ► Have the customer a device compatible with a terminal for ping procedure?",
+			[ 
+				" ► Have the customer a device compatible with a terminal for ping procedure?",
 				" ► On Windows press 'win + R' type 'cmd', 'terminal' , or 'powershell'",
 				" ► On MacOS press command + space bar on your Mac Keyboard, type 'terminal'"
 			],
 			"Skips":
-			[["checkPingreset","4led_factory_reset"]],
-			"Buttons": [ ["4led_factory_reset","Yes, have a response","checkPingreset"], ["4led_not_service_disconenct_coax","Not response, time out"] ]
+			[
+				["checkPingreset","4led_factory_reset"]
+			],
+			"Buttons": 
+			[ 
+				["4led_factory_reset","Yes, have a response","checkPingreset"], 
+				["4led_not_service_disconenct_coax","Not response, time out"] 
+			]
 		},
 		"4led_not_service_disconenct_coax":
 		{
 			"Question": "Have access to GUI with the Coax Disconnected?",
 			"Text": 
-			[ "***Disconnect the coax cable on the modem",
+			[ 
+				"***Disconnect the coax cable on the modem",
 			  " ► Restart the modem with the Coaxial cable disconnected.",
 				" ► Try accessing the GUI while hardwired to a computer"
 			],
-			"Buttons": [ ["4led_not_service_reconnect_coax","Yes"], ["4led_not_service_check_ipv4","No"] ]
+			"Buttons": 
+			[ 
+				["4led_not_service_reconnect_coax","Yes"], 
+				["4led_not_service_check_ipv4","No"] 
+			]
 		},
 		"4led_not_service_reconnect_coax":
 		{
 			"Question": "Connect coax cable and check if the Customer get online?",
 			"Text": 
-			[ "*** Connect the coax cable on the modem",
-				" ► Reconnect the coaxial cable and wait for the correct LEDs Status "	],
-			"Buttons": [ ["4led__checkled","Yes"], ["redirect_toprovision","No"] ]
+			[ 
+				"*** Connect the coax cable on the modem",
+				" ► Reconnect the coaxial cable and wait for the correct LEDs Status "	
+			],
+			"Buttons": 
+			[ 
+				["4led__checkled","Yes"], 
+				["redirect_toprovision","No"] 
+			]
 		},
 		"4led_not_service_check_ipv4":
 		{
 			"Question": "Check IPv4 address, Check DNS",
 			"Text": 
-			[ "*** On windows",
+			[ 
+				"*** On windows",
 				" ► Open 'Control Panel' ► 'network and internet' ► 'Network sharing center' ► 'change adapter settings'",	
 				"*** On macOS",
 				" ► Open 'System Preferences' ► 'network' ► 'advanced' ► 'TCP/IP'",
@@ -478,8 +585,14 @@
 				"*** On Android",	
 				" ► Open 'Settings' ► 'Wireless & networks/WLAN' ► 'Network & Internet' ► 'Wi-Fi'"
 			],
+			"QuestionsTemplate":
+			[
+				"IPv4 address: ",
+				"DNS address: "
+			],
 			"Buttons": 
-			[ ["4led_not_service_check_gui","192.168.0.*"], 
+			[ 
+				["4led_not_service_check_gui","192.168.0.*"], 
 				["4led_factory_reset","169.254.*.*"],
 				["4led_not_service_media_disconnected","Media disconnected","media_disconnected"] 
 			]
@@ -489,9 +602,12 @@
 			"Question": "Access to GUI restored?",
 			"Text": ["Access to GUI restored"],
 			"Skips":
-			[ ["checkGUIreset","4led_factory_reset"] ],
+			[ 
+				["checkGUIreset","4led_factory_reset"] 
+			],
 			"Buttons": 
-			[ ["4led__checkled", "Yes"], 
+			[ 
+				["4led__checkled", "Yes"], 
 				["4led_factory_reset","No","checkGUIreset"] 
 			]
 		},
@@ -499,7 +615,10 @@
 		{
 			"Question":"Try with a different ethernet cord and a different device",
 			"Text": ["***Restart the gateway"],
-			"Buttons":[["4led__checkled","Done"]]
+			"Buttons":
+			[
+				["4led__checkled","Done"]
+			]
 		},
 
 
@@ -512,10 +631,18 @@
 			"Comments": "Slow speed procedure",
 			"Question": "Has the customer experienced this issue before?",
 			"Text":
-			[ "Has the customer already contacted us before to check cable signal levels",
-				"  or monitor network performance after checking WiFi Channels?"
+			[ 
+				"Has the customer already contacted us before to check cable signal levels",
+				"  or monitor network performance after checking Wi-Fi Channels?"
 			],
-			"Skips":[["slowspeedReset","redirect_toprovision"]],			
+			"QuestionsTemplate":
+			[
+				"Case number: "
+			],
+			"Skips":
+			[
+				["slowspeedReset","redirect_toprovision"]
+			],			
 			"Buttons":
 			[ 
 				["replace_unit","Yes"],
@@ -525,12 +652,16 @@
 		"4led_slow_speed__select":
 		{
 			"Question": "Device type",
-			"Buttons":[["4led_slow_speed__modem","Modem"],["4led_slow_speed__gateway","Gateway"]]
+			"Buttons":
+			[
+				["4led_slow_speed__modem","Modem"],
+				["4led_slow_speed__gateway","Gateway"]
+			]
 		},
 		"4led_slow_speed__redirect_manufacturer":
 		{
 			"Question": "Redirect to 3rd party manufacturer.",
-			"Text": ["Offer AA if applicacble"]
+			"Text": ["<br>","Offer AA if applicable"]
 		},
 
 
@@ -540,9 +671,10 @@
 
 		"4led_slow_speed__modem":
 		{
-			"Question":"Is the customer experiencing slow speed through a hardwired modem or through a separate router?",
+			"Question":"Is the customer experiencing through a separate router or hardwired modem?",
 			"Buttons":
-			[ ["4led_slow_speed__modem_separeterouter","Separate router"],
+			[ 
+				["4led_slow_speed__modem_separeterouter","Separate router"],
 				["4led_slow_speed__modem_checkcsl","Directly connected to the modem"]
 			]
 		},
