@@ -136,7 +136,8 @@
 			"Comments": "This procedure is for first time setup",
 			"Question" : "Is this the first-time setup?",
 			"Text": 
-			["If this is first-time setup,", 
+			[
+				"If this is first-time setup,", 
 				"there is a higher chance the problem will be related to provisioning."
 			],
 			"Popmsg" : "If this is first-time setup, there is a higher chance the problem will be related to provisioning.",
@@ -145,7 +146,8 @@
 				["reprovision","redirect_toprovision"]
 			],
 			"Buttons" : 
-			[ ["sbg8300_other_modems","Yes","reprovision"],
+			[ 
+				["sbg8300_other_modems","Yes","reprovision"],
 			  ["sbg8300__check_connection", "No","reprovision"]
 			]
 		},
@@ -159,17 +161,19 @@
 			],
 
 			"Buttons" : 
-			[ ["sbg8300_check_activation", "Done"] ]
+			[ 
+				["sbg8300_check_activation", "Done"] 
+			]
 		},
 		"sbg8300_check_activation":
 		{
 			"Question": "Was the unit already activated with the ISP?",
 			"Text": ["Verify if the customer has already provided the HFC MAC ID to the service provider"],
 			"Buttons": 
-			[	["sbg8300_factory_reset","Yes"],
-			["self_activation_procedure","No"],
-			["self_activation_procedure","No, Comcast/Xfinity"]
-		]
+			[	
+				["sbg8300_factory_reset","Yes"],
+				["self_activation_procedure","No"]
+			]
 		},
 		"sbg8300_self_activation":
 		{
