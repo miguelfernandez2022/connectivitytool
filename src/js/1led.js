@@ -854,18 +854,17 @@
 		},
 		"1led_slow_speed__gateway_wifi__interference_powercycle":
 		{
-			"Question": "Power cycle the gateway",
-			"Text": ["Unplug the power cord from the AC outlet and wait one minute."],
-			"Buttons": 
+			"Question": "Power cycle the Gateway and check if the speed improved",
+			"Text": 
 			[
-				["1led_slow_speed__gateway_wifi__interference_check","Done"]
-			]
-		},
-		"1led_slow_speed__gateway_wifi__interference_check":
-		{
-			"Question": "Has the speed improved?",
-			"Text": ["Check the connection after the restart"],
-			"Buttons":
+				"Disconnect the power cord from the AC wall outlet and wait one minute",
+				"Check the connection after the restart"
+			],
+			"QuestionsTemplate":
+			[
+				"Speed test result:"
+			],
+			"Buttons": 
 			[
 				["resolved","Yes"],
 				["1led_slow_speed__gateway_wifi__interference_checkspeed","No"]

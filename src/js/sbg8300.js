@@ -626,23 +626,22 @@
 		},
 		"sbg8300_slow_speed_wifi__interference_powercycle":
 		{
-			"Question": "Power cycle the gateway",
-			"Text": ["Disconnect the power cord from the AC wall outlet and wait one minute"],
-			"Buttons": 
+			"Question": "Power cycle the Gateway and check if the speed improved",
+			"Text": 
 			[
-				["sbg8300_slow_speed_wifi__interference_check","Done"]
-			]
-		},
-		"sbg8300_slow_speed_wifi__interference_check":
-		{
-			"Question": "Has the speed improved?",
-			"Text": ["Check the connection after the restart"],
-			"Buttons":
+				"Disconnect the power cord from the AC wall outlet and wait one minute",
+				"Check the connection after the restart"
+			],
+			"QuestionsTemplate":
+			[
+				"Speed test result:"
+			],
+			"Buttons": 
 			[
 				["resolved","Yes"],
 				["sbg8300_slow_speed_wifi__interference_checkspeed","No"]
 			]
-		}, 
+		},
 		"sbg8300_slow_speed_wifi__interference_checkspeed":
 		{
 			"Question": "Check the firewall configuration. Is speed still underperforming?",
