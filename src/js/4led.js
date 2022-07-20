@@ -158,7 +158,7 @@
 			[ 
 				["4led__check_tvconnection","Yes, TV working","reset"],
 				[ "checksignal","Yes, TV not working"],
-				["4led__check_tvconnection","Not TV suscription","reset"]
+				["4led__check_tvconnection","Not TV subscription","reset"]
 			]	
 		},
 		"4led__check_tvconnection": 
