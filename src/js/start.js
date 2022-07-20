@@ -299,34 +299,20 @@
 			"Buttons" : 
 			[	
 				["xfinity_activation_procedure__internet_working", "No"],
-				["xfinity_activation_procedure", "Xfinity"],
-				["cox_activation_procedure","COX"],
-				["spectrum_activation_procedure","SPECTRUM"],
+				["xfinity_activation_procedure__confirm_self_activation", "Xfinity"],
+				["cox_activation_procedure__confirm_self_activation","COX"],
+				["spectrum_activation_procedure__confirm_self_activation","SPECTRUM"],
 				["other_isp__activation_procedure","Other Service Provider"]
 			]
 		},		
-		"xfinity_activation_procedure":
-		{
-			"Question": "Does the customer have the information required to complete self-activation?",
-			"Text": 
-			[
-				"The customer will need their Xfinity user ID,",
-				"or email address and/or their Xfinity password associated with the user ID email",
-				"Assist customer with self activation",
-				"***<a href='http://arris.force.com/consumers/articles/General_FAQs/Xfinity-Cable-Modem-Activation' target = '_blank'>Article link</a>"
-			],
-			
-			"Buttons" : 
-			[	
-				["xfinity_activation_procedure__confirm_self_activation", "Yes"],
-				["provision","No"] 
-			]
-		},
 		"xfinity_activation_procedure__confirm_self_activation":
 		{
-			"Question": "Is activation successful?",
-			"Text": ["Follow Comcast self-activation process. Use the Xfinity app"],
-			
+			"Question": "Follow Comcast self-activation process",
+			"Text": 
+			[
+				"Use the Xfinity app",
+				"Is activation successful?"
+			],			
 			"Buttons" : 
 			[
 				["xfinity_activation_procedure__internet_working", "Yes"],
@@ -343,19 +329,11 @@
 				["provision","No"]
 			]
 		},
-		"cox_activation_procedure":
-		{
-			"Question": "Does the customer have the information required to complete self-activation?",
-			"Text": ["Assist customer with self activation"],			
-			"Buttons" : 
-			[	
-				["cox_activation_procedure__confirm_self_activation", "Done"] 
-			]
-		},
+
 		"cox_activation_procedure__confirm_self_activation":
 		{
-			"Question": "Is activation successful?",
-			"Text": ["Assist customer with self activation"],			
+			"Question": "Follow Cox self-activation process",
+			"Text": ["Is activation successful?"],			
 			"Buttons" : 
 			[
 				["cox_activation_procedure__internet_working", "Yes"],
@@ -372,19 +350,10 @@
 				["provision","No"]	
 			]
 		},
-		"spectrum_activation_procedure":
-		{
-			"Question": "Does the customer have the information required to complete self-activation?",
-			"Text": ["Assist customer with self activation"],			
-			"Buttons" : 
-			[	
-				["spectrum_activation_procedure__confirm_self_activation", "Done"] 
-			]
-		},
 		"spectrum_activation_procedure__confirm_self_activation":
 		{
-			"Question": "Is activation successful?",
-			"Text": ["Follow Spectrum self-activation process"],
+			"Question": "Follow Spectrum self-activation process",
+			"Text": ["Is activation successful?"],
 			"Buttons" : 
 			[	
 				["spectrum_activation_procedure__internet_working", "Yes"],
