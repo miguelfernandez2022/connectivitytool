@@ -68,14 +68,12 @@
 		"sbg8300__hardware_fail": 
 		{
 			"Comments": "Power on hardware fail procedure", 
-			"Question": "Check the Ethernet port LED status",
-			"QuestionsTemplate": 
-			[
-				"Is the light on?: ",
-				"Is it green or yellow/amber?:"
-			],
+			"Question": "Is the Ethernet port LED on?",
+			"QuestionsTemplate": ["Is it green or yellow/amber?:"],
 			"Skips" : 
-			[	["replace", "replace_unit"]	],			
+			[	
+				["replace", "replace_unit"]	
+			],			
 			"Buttons" :
 			[	
 				["sbg8300__hardware_fail__poweroutlet", "Yes"],
