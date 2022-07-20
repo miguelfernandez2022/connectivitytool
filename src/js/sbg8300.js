@@ -230,6 +230,7 @@
 			],
 			"Skips":
 			[
+				["ThirdPartyRouter","sbg8300_not_service__thirdpartymanufacturer"],
 				["toprovision","redirect_toprovision"]
 			],
 			"Buttons": 
@@ -252,7 +253,8 @@
 				"Restart Cable Modem or Reboot, or powercycle the modem"
 			],
 			"Skips":
-			[ 	
+			[ 
+				["ThirdPartyRouter","sbg8300_not_service__thirdpartymanufacturer"],	
 				["toreplace_unit","replace_unit"]
 			],
 			"Buttons": 
@@ -344,7 +346,7 @@
 			"Buttons": 
 			[	
 				["sbg8300_not_service_bypassrouter","Bypass the router"],
-				["sbg8300_not_service_unable_bypassrouter","Unable to bypass the router"]
+				["sbg8300_not_service_unable_bypassrouter","Unable to bypass the router","ThirdPartyRouter"]
 			]
 		},
 		"sbg8300_not_service_bypassrouter": 
@@ -415,6 +417,17 @@
 				["sbg8300_not_service_check_ip_dns","No"]
 			]
 		},
+		"sbg8300_not_service__thirdpartymanufacturer":
+		{
+			"Question": "Redirect the Customer to Third Party Manufacturer",
+			"Text": 
+			[	
+				"<br>",
+				"***Suggest to acquire a device that could be connected Hardwired to the ARRIS and Call us Back",
+				"***Provide Case Number to Customer"
+			]
+		},
+
 
 
 
@@ -510,7 +523,7 @@
 			],
 			"Buttons": 
 			[ 
-				["sbg8300_not_service_check_gui","192.168.0.*"], 
+				["sbg8300_not_service_check_gui","192.168.*.*"], 
 				["sbg8300_factory_reset","169.254.*.*"],
 				["sbg8300_not_service_media_disconnected","Media disconnected","media_disconnected"] 
 			]
