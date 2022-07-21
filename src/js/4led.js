@@ -202,7 +202,7 @@
 			"Question": "Is this the ARRIS device's first time setup/installation?",		
 			"Buttons" :
 			[ 
-				["4led_factory_reset","Yes","tocheckgui"],
+			  ["4led_factory_reset","Yes","tocheckgui"],
 			  ["4led_not_internet_access__checkfirsttime_reboot","No","tocheckgui"]
 		  ]	
 		},
@@ -216,7 +216,7 @@
 		},
 		"4led_redirect_toprovision":
 		{
-			"Question": "Have we already redirected the Customer to try provising again?",
+			"Question": "Have we already redirected the Customer to try provisioning again?",
 			"Text": 
 			[	
 				"***There MUST be an existing case or note where the customer",
@@ -648,7 +648,8 @@
 			],
 			"QuestionsTemplate":
 			[
-				"Case number: "
+				"Case number: ",
+        "Speed test result: "
 			],
 			"Skips":
 			[
@@ -829,7 +830,7 @@
 			"Buttons":
 			[ 
 				["4led_slow_speed__redirect_manufacturer","Only one client"],
-			  ["4led_slow_speed__gateway__checkcsl","All clients are affected"]
+			  ["4led_slow_speed__gateway__wifi_radio_interference","All clients are affected"]
 			]
 		},
 		"4led_slow_speed__gateway__checkcsl":
@@ -845,8 +846,8 @@
 			"Buttons": 
 			[ 
 				["4led_slow_speed__gateway__adjustcsl","No"],
-				["4led_slow_speed__gateway__wifi_radio_interference","wi-fi, acceptable"],
-				["4led_slow_speed__gateway__wifi_congestion","wired - both, acceptable"]
+				["4led_factory_reset","wi-fi, acceptable"],
+				["4led_factory_reset","wired - both, acceptable"]
 			]
 		},
 		"4led_slow_speed__gateway__adjustcsl":
@@ -859,6 +860,7 @@
 			"Question": "Are the 2.4 Ghz and/or 5 Ghz radio experiencing problems?",
 			"QuestionsTemplate":
 			[
+        "Make an speed test, and paste results: ",
 				"Check if the Device's Placement is correct: ",
 				"Number of nearby access points: ",
 				"Number of APs found per band: "
@@ -929,7 +931,7 @@
 			"Buttons": 
 			[
 				["4led_slow_speed__gateway__wifi_interference", "Yes"],
-				["4led_factory_reset","No"]
+				["4led_slow_speed__gateway__checkcsl","No"]
 			]
 		},
 		"4led_slow_speed__gateway__wifi_interference":
