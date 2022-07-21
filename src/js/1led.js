@@ -204,7 +204,7 @@
 		},
 		"1led_redirect_toprovision":
 		{
-			"Question": "Have we already redirected the Customer to try provising again?",
+			"Question": "Have we already redirected the Customer to try provisioning again?",
 			"Text": 
 			[	
 				"***There MUST be an existing case or note where the customer",
@@ -619,7 +619,8 @@
 			],
 			"QuestionsTemplate":
 			[
-				"Case number: "
+				"Case number: ",
+        "Speed test result: "
 			],
 			"Skips":
 			[
@@ -800,8 +801,8 @@
 			"Question": "How many clients are affected on the network?",
 			"Buttons":
 			[ 
-				["1led_slow_speed__redirect_manufacturer","Only one client"],
-			  ["1led_slow_speed__gateway__checkcsl","All clients are affected"]
+        ["1led_slow_speed__redirect_manufacturer","Only one client"],
+        ["1led_slow_speed__gateway__wifi_radio_interference","All clients are affected"]
 			]
 		},
 		"1led_slow_speed__gateway__checkcsl":
@@ -817,8 +818,8 @@
 			"Buttons": 
 			[ 
 				["1led_slow_speed__gateway__adjustcsl","No"],
-				["1led_slow_speed__gateway__wifi_radio_interference","wi-fi, acceptable"],
-				["1led_slow_speed__gateway__wifi_congestion","wired - both, acceptable"]
+				["1led_factory_reset","wi-fi, acceptable"],
+				["1led_factory_reset","wired - both, acceptable"]
 			]
 		},
 		"1led_slow_speed__gateway__adjustcsl":
@@ -831,6 +832,7 @@
 			"Question": "Are the 2.4 Ghz and/or 5 Ghz radio experiencing problems?",
 			"QuestionsTemplate":
 			[
+				"Make an speed test, and paste results: ",
 				"Check if the Device's Placement is correct: ",
 				"Number of nearby access points: ",
 				"Number of APs found per band: "
@@ -901,7 +903,7 @@
 			"Buttons": 
 			[
 				["1led_slow_speed__gateway__wifi_interference", "Yes"],
-				["1led_factory_reset","No"]
+				["1led_slow_speed__gateway__checkcsl", "No"]
 			]
 		},
 		"1led_slow_speed__gateway__wifi_interference":

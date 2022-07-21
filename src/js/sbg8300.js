@@ -562,6 +562,16 @@
 		{
 			"Comments": "Slow speed procedure",
 			"Question": "Is the issue with WiFi, Wired, or both?",
+			"Text":
+			[ 
+				"Is there a case where the customer has contacted us before to check cable signal levels",
+				"or monitor network performance after checking Wi-Fi channels?"
+			],
+			"QuestionsTemplate":
+			[
+				"Case number: ",
+        		"Speed test result: "
+			],
 			"Skips":
 			[
 				["slowspeedReset","redirect_toprovision"]
@@ -578,7 +588,7 @@
 			"Buttons":
 			[
 				["sbg8300_slow_speed__oneclient","Only one client"],
-				["sbg8300_slow_speed__checkcsl","All clients are affected"]
+				["sbg8300_slow_speed__wifi_radio_interference","All clients are affected"]
 			]
 		},
 		"sbg8300_slow_speed__oneclient":
@@ -597,9 +607,10 @@
 				"Upstream Power Level: "
 			],
 			"Buttons": 
-			[ ["sbg8300_slow_speed__adjustcsl","No"],
-				["sbg8300_slow_speed__wifi_radio_interference","wi-fi, acceptable"],
-				["sbg8300_slow_speed__wifi_congestion","wired - both, acceptable"]
+			[ 
+				["sbg8300_slow_speed__adjustcsl","No"],
+				["sbg8300_factory_reset","wi-fi, acceptable"],
+				["sbg8300_factory_reset","wired - both, acceptable"]
 			]
 		},
 		"sbg8300_slow_speed__adjustcsl":
@@ -610,7 +621,13 @@
 		"sbg8300_slow_speed__wifi_radio_interference":
 		{
 			"Question": "Are the 2.4 Ghz and/or 5 Ghz radio experiencing problems?",
-			"QuestionsTemplate": ["Are these networks within range?"],
+			"QuestionsTemplate":
+			[
+				"Make an speed test, and paste results: ",
+				"Check if the Device's Placement is correct: ",
+				"Number of nearby access points: ",
+				"Number of APs found per band: "
+			],
 			"Buttons":
 			[ 
 				["sbg8300_slow_speed_wifi__interference_onenetwork","Only one has interference"],
@@ -660,18 +677,23 @@
 		{
 			"Question": "Identify an environmental Issue?",
 			"Text": 
-			[ "Check if the Device's Placement is correct.",
-				"Check the Amount of Nearby Access Points and Change WiFi Channels to the Least Congested One."
+			[ 
+				"Relocate your wireless router away from nearby routers, appliances and dense building materials.",
+				"Unplug the appliances and devices when not in use.",
+				"Avoid using too many wireless gadgets at the same time within close proximity of each other.",
+				"Check the Amount of Nearby Access Points and Change Wi-Fi Channels to the Least Congested One."
 			],
 			"QuestionsTemplate":
 			[
-				"Amount of Nearby Access Points: ",
-				"Amount of APs Found per Band: "
+				"Check if the Device's Placement is correct: ",
+				"Number of nearby access points: ",
+				"Number of APs found per band: ",
+				"Less congested Wi-Fi channels: "
 			],
 			"Buttons": 
 			[
 				["sbg8300_slow_speed__wifi_interference", "Yes"],
-				["sbg8300_factory_reset","No"]
+				["sbg8300_slow_speed__checkcsl","No"]
 			]
 		},
 		"sbg8300_slow_speed__wifi_interference":
