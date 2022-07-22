@@ -22,9 +22,9 @@
 			[			
 				["***Power Off", "No ligths turning on"],			
 				["***Solid Blue", "Device is on / Hardware fail"],			
-				["***Fast or Slow blinking Blue","sbg8300__not_internet"],			
-				["***Green Blinking","sbg8300_first_time_setup"],			
-				["***Solid Green","Device is online, Check Service"]	
+				["***Fast or Slow blinking Blue","Not internet access"],			
+				["***Green Blinking","First time setup"],			
+				["***Solid Green","Device is online, check service"]	
 			],
 			"Buttons" : 
 			[
