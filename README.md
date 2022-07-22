@@ -112,47 +112,22 @@ If you get a "parsererror" or "SyntaxError", try validating the JSON file using 
 ````json
 "step1": 
 {
-	"Question": "Text of the question, or just open and close quotes to not print a question.",
-	"Text":
-  [ 
-		"*** highlight - for non-question or elaboration",
-		"smaller font - for non-question or elaboration",
-	],
-	"QuestionsTemplate": 
-	[
-		"Appear on the notes, can be deleted ", 
-		"Maybe appear repeated if needed "
-	],
-	"TextCheckbox": 
-	[
-		"Checkbox, which appears, once checked, cleans the textnotes and puts the text it contains"
-	],
-  "Table" : 
-  [
-    ["***Header 1", "***Header 2", "***Header 3"],
-    ["Data 1", "Data 2", "Data 3"]
-	],
-  "LEDchart3led":
-	[
-	  ["3led_poweroff_power_on_fail","off","off","off"],
-		["3led_poweroff_hardware_fail", "solid","off","off"],
-		["3led_not_internet_access", "solid","flashing","off"],
-		["3led_first_time_setup", "solid","solid","flashing"],				
-		["3led_not_service", "solid","solid","solid"],				
-		["3led__led_behavior", "*", "*","*"]				
-	],
-	"LEDfail" : "3led_poweroff_hardware_fail"
-	"NoNotes" : "true",
-	"Noteheight": "8rem"
-  "Skips" : 
-  [
-		["reset", "redirsignal"],
-		["power", "rma"]
-	], 
-	"Buttons": 
-  [
-		["step_to_jump_to", "Button Text"],
-		["another_step", "Button 2 Text"]
-	]
+"Question": "Text of the question, or just open and close quotes to not print a question.",
+"Text":["*** highlight - for non-question or elaboration","smaller font - for non-question or elaboration",],
+"QuestionsTemplate":["Appear on the notes, can be deleted ","Maybe appear repeated if needed "],
+"TextCheckbox":["Checkbox, which appears, once checked, cleans the textnotes and puts the text it contains"],
+"Table":[["***Header 1", "***Header 2", "***Header 3"],["Data 1", "Data 2", "Data 3"]],
+"LEDchart3led":[
+["3led_poweroff_power_on_fail","off","off","off"],
+["3led_poweroff_hardware_fail", "solid","off","off"],
+["3led_not_internet_access", "solid","flashing","off"],
+["3led_first_time_setup", "solid","solid","flashing"],
+["3led_not_service", "solid","solid","solid"],
+["3led__led_behavior", "*", "*","*"]],
+"LEDfail" : "3led_poweroff_hardware_fail",
+"NoNotes" : "true",
+"Noteheight": "8rem",
+"Skips":[["skip1", "redirsignal"],["skip2", "rma"],["skip3", "rma2"]],
+"Buttons":[["step_to_jump_to", "Button Text","skip1","skip2"],["another_step", "Button 2 Text","skip3"]]
 },
 ````
