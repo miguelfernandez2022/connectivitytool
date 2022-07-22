@@ -20,7 +20,7 @@
 			],
 			"QuestionsTemplate":
 			[
-				"When start the rebooting proccess?"
+				"When start the rebooting process?"
 			],
 			"Skips":
 			[	
