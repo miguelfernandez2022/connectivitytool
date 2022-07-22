@@ -578,10 +578,25 @@
 			],			
 			"Buttons":
 			[ 
-				["sbg8300_slow_speed__wifi","Yes, wi-fi","slowspeedReset"],
+				["sbg8300_slow_speed__tryethernet","Yes, wi-fi","slowspeedReset"],
 				["sbg8300_slow_speed__checkcsl","Yes, wired or both","slowspeedReset"]
 			]
 		},
+		"sbg8300_slow_speed__tryethernet":
+		{
+			"Question": "Does the client have a low speed ethernet connection?",
+			"Text": ["Run an speedtest over ethernet"],
+			"QuestionsTemplate":
+			[
+				"Speed test result: "
+			],		
+			"Buttons":
+			[ 
+				["sbg8300_slow_speed__checkcsl","Yes"],
+				["sbg8300_slow_speed__wifi","The client does not use ethernet"],
+				["sbg8300_slow_speed__wifi","No"]
+			]
+		},		
 		"sbg8300_slow_speed__wifi":
 		{
 			"Question": "Which clients are affected?",

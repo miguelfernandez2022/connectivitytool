@@ -824,8 +824,23 @@
 			"Question": "Is the issue with WiFi, Wired, or both?",		
 			"Buttons":
 			[ 
-				["3led_slow_speed__gateway__wifi","Yes, wi-fi"],
+				["3led_slow_speed__gateway_tryethernet","Yes, wi-fi"],
 				["3led_slow_speed__gateway__checkcsl","Yes, wired or both"]
+			]
+		},
+		"3led_slow_speed__gateway_tryethernet":
+		{
+			"Question": "Does the client have a low speed ethernet connection?",
+			"Text": ["Run an speedtest over ethernet"],
+			"QuestionsTemplate":
+			[
+				"Speed test result: "
+			],		
+			"Buttons":
+			[ 
+				["3led_slow_speed__gateway__checkcsl","Yes"],
+				["3led_slow_speed__gateway__wifi","The client does not use ethernet"],
+				["3led_slow_speed__gateway__wifi","No"]
 			]
 		},
 		"3led_slow_speed__gateway__wifi":
