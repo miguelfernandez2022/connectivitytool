@@ -69,16 +69,21 @@
 			"Popmsg": "Refer to Article 000009802 \n\t",
 			"Text": 
 			[ 
-				"What is your subscribed internet speed tier? ",
 				"Check and verify the modem/gateway is compatible with MSO",
-				"Ask Cust. what client devices are connected/affected?",
-				"Refer to Article 000009802 ",
-				"<a href='https://arris.my.salesforce.com/console' target = '_blank'>Internal Link</a>",
+				"'Wired Download Speed' this refers to how fast your modem,", 
+				"  pulls data from the Internet via wired connection. ",
 				"<a href='http://arris.force.com/consumers/articles/General_FAQs/Service-Provider-Modem-Compatibility-List' target = '_blank'>External link</a>"
+			],
+			"QuestionsTemplate":
+			[
+				"What is your subscribed internet speed tier? ",
+				"Speed tier plan: ",
+				"According to the ISP, what is the 'Wired Download Speed':  "
 			],
 			"Buttons":
 			[
 				["device__rebooting", "Yes"],
+				["device__rebooting", "ISP Confirm is not compatible"],
 				["non__compatible","No"]
 			]
 		},
@@ -87,12 +92,10 @@
 		{
 			"Question" : "These device is not compatible with the service provider or speed tier plan",
 			"Text" : 
-			[
-				"*** Speed tier plan: ",  
-				"*** Advise to change speed tier plan", 
-				"explain the behavior of use a not compatible device with the specific ISP speed tier plan"
-			],
-			"Buttons":[["device__rebooting", "Continue"]]
+			[ 
+				"<br>",
+				"*** Advise to change speed tier plan"
+			]			
 		},
 
 		"device__rebooting": 
@@ -103,8 +106,8 @@
 				"Guide the cx to make sure, the cable are conencted and tight"
 			],
 			"Buttons" : [
-				["device_rebooting__device", "Yes, Rebooting Steps"],
-				["device_model", "No, Select device model"]
+				["device_rebooting__device", "Yes"],
+				["device_model", "No"]
 			]
 		},
 
