@@ -113,7 +113,7 @@ If you get a "parsererror" or "SyntaxError", try validating the JSON file using 
 "step1": 
 {
 "Question": "Text of the question, or just open and close quotes to not print a question.",
-"Text":["*** highlight - for non-question or elaboration","smaller font - for non-question or elaboration",],
+"Text":["*** highlight - for non-question or elaboration","smaller font - for non-question or elaboration"],
 "QuestionsTemplate":["Appear on the notes, can be deleted ","Maybe appear repeated if needed "],
 "TextCheckbox":["Checkbox, which appears, once checked, cleans the textnotes and puts the text it contains"],
 "Table":[["***Header 1", "***Header 2", "***Header 3"],["Data 1", "Data 2", "Data 3"]],
