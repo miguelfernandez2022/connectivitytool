@@ -15,12 +15,16 @@
 		{
 			"Question" : "Wish type of device have the costumer?",
 			"Text" : 
-			[ 
-				"***When start the rebooting proccess?",
+			[ 				
 				"If possible, make a direct connection to the device with a ethernet cable."
 			],
+			"QuestionsTemplate":
+			[
+				"When start the rebooting proccess?"
+			],
 			"Skips":
-			[	["gateway__wired","device_rebooting__gateway__coax_out"],
+			[	
+				["gateway__wired","device_rebooting__gateway__coax_out"],
 				["modem","device_rebooting__modem__coax_out"]
 			],
 			"Buttons" : 
@@ -37,8 +41,8 @@
 			"Question" : "Is the device rebooting on its own even with the coax out?",
 			"Text": 
 			[
-				"The client has a splitter connected?",
-				"Check coax cable, replace if needed",
+				"The client has a splitter connected? ",
+				"Check coax cable, replace if needed ",
 				"Disconnect coax cable and try to access web interface (gui)"
 			],
 			"QuestionsTemplate": 
@@ -78,18 +82,16 @@
 		"device_rebooting__modem__checkconnect": 
 		{
 			"Question": "Troubleshoot the coaxial connection, bypass splitters, and powercycle the modem.",
-
 			"Text": 
 			[ 
-				"***If any splitters are present, bypass them.",
-				"***Make sure no cables are visibly damaged and try another coaxial outlet if available."
+				"If any splitters are present, bypass them.",
+				"Make sure no cables are visibly damaged and try another coaxial outlet if available."
 			],
 			"Buttons":[["device_rebooting__modem__checkgui","Done"]]
 		},
 		"device_rebooting__modem__checkgui": 
 		{
 			"Question": "Can customer  go to login screen on web interface (gui)",
-			"Popmsg": "Put something here",
 			"Text": ["If the customer can access web interface need to provision the unit."],
 			"Buttons": 
 			[
@@ -121,7 +123,8 @@
 				"Is the ethernet cable Damaged?: "
 			],
 			"Skips":[["rebooting__coax__out","device_rebooting__modem__factory__reset"]],
-			"Buttons": [
+			"Buttons": 
+			[
 				["device_rebooting__gateway__factory__reset", "Yes"],
 				["device_rebooting__gateway__checkgui", "No"]
 			]
@@ -130,7 +133,8 @@
 		{
 			"Question": "Perform a factory reset",
 			"Skips":[["device_rebooting__gateway_replace","replace_unit"]],
-			"Text": [
+			"Text": 
+			[
 				"***Type the reason of why the factory reset could not be perform ( if applicable )",
 				"***If it is a Gateway advise this action will erase all previous",
 				"***connectivity configurations set by the cable provider",
@@ -142,7 +146,10 @@
 				"2) Go to Configuration, then click Reset All Defaults or Restore Factory Defaults",
 				"Restart Cable Modem or Reboot, or powercycle the modem"
 			],
-			"Buttons": [["device_rebooting__gateway__checkgui","Done","device_rebooting__gateway_replace"]]
+			"Buttons": 
+			[
+				["device_rebooting__gateway__checkgui","Done","device_rebooting__gateway_replace"]
+			]
 		},
 		"device_rebooting__gateway__checkgui": 
 		{
