@@ -52,7 +52,7 @@
 			],
 			"Buttons" : 
 			[
-				["device_model", "Yes"],
+				["isp__compatibility", "Yes"],
 				["non__applicable", "No"]
 			]
 		},
@@ -186,7 +186,8 @@
 			"Question": "Replacement may be needed. Consult RMA policy.",
 			"Poplink" : "https://arris.my.salesforce.com/articles/General_FAQs/ARRIS-Product-Warranty-Replacement-Guidelines",
 			"Text": 
-			[ "Salesforce article for RMA policy will open in new window.",
+			[ 
+				"Salesforce article for RMA policy will open in new window.",
 				"You must be logged into Salesforce in this browser for the page to load.",
 				"Click \"info\" for RMA policy article.",
 				"Verify device is in warranty. Obtain authorization from Tier 2 to replace if needed."
