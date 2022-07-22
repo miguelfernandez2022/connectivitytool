@@ -72,7 +72,7 @@
 				"Check and verify the modem/gateway is compatible with MSO",
 				"'Wired Download Speed' this refers to how fast your modem,", 
 				"  pulls data from the Internet via wired connection. ",
-				"<a href='http://arris.force.com/consumers/articles/General_FAQs/Service-Provider-Modem-Compatibility-List' target = '_blank'>External link</a>"
+				"<a href='http://arris.force.com/consumers/articles/General_FAQs/Service-Provider-Modem-Compatibility-List' target = '_blank'>SERVICE PROVIDER MODEM COMPATIBILITY LIST</a>"
 			],
 			"QuestionsTemplate":
 			[
