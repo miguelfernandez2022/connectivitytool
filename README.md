@@ -132,10 +132,10 @@ var debug = true; //Enables showing STEPNAME when holding mouse pointer over a s
 
 ### Option Note height
 
->An string that can set a height property on the notes
+>An string that can set a height property on the notes, specify for custom note height,
 
 ````json
-"Noteheight": "8rem", specify for custom note height,
+"Noteheight": "8rem", 
 ````
 
 ### Option Table
@@ -203,8 +203,9 @@ var debug = true; //Enables showing STEPNAME when holding mouse pointer over a s
 "LEDfail" : "4led_poweroff_hardware_fail"	
 ````
 
-#### Option 3 LED ledchart
+![4ledchart](./src/img/readme/4ledchart.jpg)
 
+#### Option 3 LED ledchart
 
 ````json
 "LEDchart3led":
@@ -219,7 +220,7 @@ var debug = true; //Enables showing STEPNAME when holding mouse pointer over a s
 "LEDfail" : "3led_poweroff_hardware_fail"
 ````
 
-
+![3ledchart](./src/img/readme/3ledchart.jpg)
 
 Example with LED Chart handling
 first item in each line is the destination step.
