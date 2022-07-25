@@ -38,7 +38,6 @@ All options in each step are optional, but remember to put a comma at the end of
 If you get a "parsererror" or "SyntaxError", try validating the JSON file using this site,
 [JSON formatter](http://jsonformatter.curiousconcept.com/). Comma must be present if there is more than one line!
 
-<div style = "background-color: #00abc5; border-radius: 5px; padding: 5px; margin:5px;"
 
 ## Option "Question"
 
@@ -50,10 +49,6 @@ A simple text string that will be displayed in a large size, depends on css clas
 
 <img src="./src/img/readme/Question.jpg" alt="Question example" style = " border-radius: 4px;"
 />
-
-</div>
-
-<div style = "background-color: #00abc5; border-radius: 5px; padding: 5px; margin:5px;"
 
 ## Option "Popmsg" and "Poplink"
 
@@ -78,10 +73,6 @@ css class="tip"
 <img src="./src/img/readme/info.jpg" alt="info example" style = " border-radius: 3px;"
 />
 
-</div>
-
-<div style = "background-color: #00abc5; border-radius: 5px; padding: 5px; margin:5px;"
-
 ## Option "Text"
 
 An array of text between brackets, this option is for basic text or important text to clarify the step, it also supports certain HTML tags, such as links, line breaks.
@@ -102,10 +93,6 @@ css class="text"
 <img src="./src/img/readme/Text.jpg" alt="info example" style = " border-radius: 3px;"
 />
 
-</div>
-
-<div style = "background-color: #00abc5; border-radius: 5px; padding: 5px; margin:5px;"
-
 ## Option "QuestionsTemplate"
 
 An array template that will automatically appear in the notes if are empty.
@@ -121,10 +108,6 @@ Agent can delete that questions
 
 <img src="./src/img/readme/QuestionTemplate.jpg" alt="info example" style = " border-radius: 3px;"
 />
-
-</div>
-
-<div style = "background-color: #00abc5; border-radius: 5px; padding: 5px; margin:5px;"
 
 ## Option "NoNotes"
 
