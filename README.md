@@ -200,7 +200,7 @@ var debug = true; //Enables showing STEPNAME when holding mouse pointer over a s
  ["4led_not_service", "solid", "solid", "solid", "solid"],
  ["4led__led_behavior", "*", "*", "*", "*"]
 ],
-"LEDfail" : "4led_poweroff_hardware_fail"	
+"LEDfail" : "4led_poweroff_hardware_fail"
 ````
 
 ![4ledchart](./src/img/readme/4ledchart.jpg)
@@ -224,8 +224,6 @@ var debug = true; //Enables showing STEPNAME when holding mouse pointer over a s
 
 Example with LED Chart handling
 first item in each line is the destination step.
-
-
 
 ````json
 "allsolid" :

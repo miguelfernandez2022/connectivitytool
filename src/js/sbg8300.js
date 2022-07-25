@@ -337,7 +337,7 @@
 			[	
 				["sbg8300_not_service_checkinternet","Hardwired","bypassReset"],
 				["sbg8300_not_service_checkinternet","Wi-Fi","bypassReset"],
-				["sbg8300_not_service_bridge","Bridge Mode, Using external router"]
+				["sbg8300_not_service_bridge","Using 3rd party router, unable to bypass"]
 			]
 		},
 		"sbg8300_not_service_bridge": 
