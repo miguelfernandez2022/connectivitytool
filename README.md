@@ -34,7 +34,7 @@
 - [x] Version 4.9 added Gateway combined US/DS LED instructions, re-worded redirect to ISP T2 for cable signal levels, added ISP compatiblity for different LED states
 - [x] Version 5 Refresh all GUI and some behaviors, compatibility to Modern Browsers.
 - [x] Version 6 Refresh GUI and Refresh steps, add modularization steps in files
-- [x] Version 6.1 Create a new feature for question template inside the notes
+- [x] Version 6.1 Implement question template inside the notes
 - [ ] Add delight to the experience when all tasks are complete :tada:
 
 ## JSON files location
