@@ -30,6 +30,10 @@ var stepfile = "./src/js/start.js"; // specify JSON file location here
 toggle showing a step's name on mouseover by changing debug to true (enable) or false (disable)
 var debug = true;
 
+````javascript
+var debug = true; //Enables showing STEPNAME when holding mouse pointer over a step
+````
+
 ## Creating steps on json file
 
 Add items to "steps" section of JSON file in following format:
@@ -38,8 +42,7 @@ All options in each step are optional, but remember to put a comma at the end of
 If you get a "parsererror" or "SyntaxError", try validating the JSON file using this site,
 [JSON formatter](http://jsonformatter.curiousconcept.com/). Comma must be present if there is more than one line!
 
-
-## Option "Question"
+### Option "Question"
 
 A simple text string that will be displayed in a large size, depends on css class="question"
 
@@ -47,10 +50,10 @@ A simple text string that will be displayed in a large size, depends on css clas
 "Question" : "First question that appear on the step",
 ````
 
-<img src="./src/img/readme/Question.jpg" alt="Question example" style = " border-radius: 4px;"
+<img src="./src/img/readme/Question.jpg" alt="Question example" style = "border-radius: 4px;"
 />
 
-## Option "Popmsg" and "Poplink"
+### Option "Popmsg" and "Poplink"
 
 "Popmsg" contains text for message box popup on click for clarification
 "Poplink" opens a link in new window/tab.
@@ -73,7 +76,7 @@ css class="tip"
 <img src="./src/img/readme/info.jpg" alt="info example" style = " border-radius: 3px;"
 />
 
-## Option "Text"
+### Option "Text"
 
 An array of text between brackets, this option is for basic text or important text to clarify the step, it also supports certain HTML tags, such as links, line breaks.
 This text or tag will be interpreted and drawn.
@@ -93,7 +96,7 @@ css class="text"
 <img src="./src/img/readme/Text.jpg" alt="info example" style = " border-radius: 3px;"
 />
 
-## Option "QuestionsTemplate"
+### Option "QuestionsTemplate"
 
 An array template that will automatically appear in the notes if are empty.
 Agent can delete that questions
@@ -109,16 +112,21 @@ Agent can delete that questions
 <img src="./src/img/readme/QuestionTemplate.jpg" alt="info example" style = " border-radius: 3px;"
 />
 
-## Option "NoNotes"
-
+### Option "NoNotes"
 
 "NoNotes" : "true", omit this line entirely to include a notes section for the agent to type comments
 
-/>
+````json
+"NoNotes":"true",
+````
 
+### Option Note height
 
+An string that can set a height property on the notes
 
-"Noteheight": "8rem", specify for custom note height
+````json
+"Noteheight": "8rem", specify for custom note height,
+````
 
 Example with LED Chart handling
 first item in each line is the destination step.
@@ -146,11 +154,6 @@ for LED status, "*" matches any status.
 ````
 
 ## Options on json steps
-
-"QuestionsTemplate"An array template that will automatically appear in the notes if are empty.
-Agent can delete that questions
-
-
 
 "Skips" has the flowchart remember a reset was performed at this step. If step is backtracked or the flow is started over,
 the remembered reset is forgotten. You can specify as many remembered actions as needed.
