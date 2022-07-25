@@ -405,7 +405,7 @@
 				["4led_not_service_checkinternet","Hardwired Modem","bypassReset"],
 				["4led_not_service_checkinternet","Hardwired Gateway","bypassReset"],
 				["4led_not_service_checkinternet","Wi-Fi","bypassReset"],
-				["4led_not_service_bridge","Gateway in bridge mode"]
+				["4led_not_service_bridge","Using 3rd party router, unable to bypass"]
 			]
 		},
 		"4led_not_service_bridge": 
