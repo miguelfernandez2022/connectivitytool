@@ -1,3 +1,2 @@
-capture the stepfile on line 161 with a conditional if .
-line 847 --> var jsonget1led  //grab the step file defined at top of this file, for 1led troubleshooting devices.
-line 161 --> Load the json for 1led  and start new steps. 
+Generate new changelog
+git log  --pretty=format:'<li> <a href="http://github.com/miguelfernandez2022/connectivitytool/commit/%H">view commit &bull;</a> %s</li> ' --reverse > changelog.md

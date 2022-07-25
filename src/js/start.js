@@ -1,26 +1,7 @@
 {
   "comments" : 
 	[
-		"Provisioning flowchart",
-		"Beta Version review 0.1",
-		"UI Modify by Miguel Alejandro Fernandez, ARRIS Tier 1 Support Costa Rica.",
-		"Version 6, adds special handling for Comcast activation",
-		"Coded in JSON by Matthew Carpenter, ARRIS Tier 1 Support.",
-		"Modify by Miguel Alejandro Fernandez Costa Rica Team",		
-		"Add/modify steps in 'steps' section following guide in the readme.txt file.",
-		"Version 3.5 adds the NoNotes option.",
-		"Version 4.0 adds the LEDchart and LEDfail option, ans well as Popmsg and Poplink.",
-		"Version 4.2 adds Skips options. This replaces 'Resetdone'. See Readme/changelog.",
-		"Version 4.2 adds Table option. See Readme/changelog.",
-		"Version 4.3 adds Noteheight option.",
-		"Version 4.6.6 adds the CAP process",
-		"Version 4.8 adds Slow Speed Workflow TS processes",
-		"Version 4.81 fixes four identified broken paths and adds new 'No GUI Access' paths", 
-		"Version 4.82 removed 'Do not use' column from opening table, updated 'cable' signal, offer AA program, removed 'Suggest exchanging with retailer' instruction",
-		"Version 4.9 added Gateway combined US/DS LED instructions, re-worded redirect to ISP T2 for cable signal levels, added ISP compatiblity for different LED states",
-		"Version 5 Refresh all GUI and some behaviors, compatibility to Modern Browsers.",
-		"Version 6 Refresh GUI and Refresh steps, add modularization steps in files",
-		"Version 6.1 Create a new feature for question template inside the notes."
+		"Provisioning flowchart"
 	],
 
   "title" : "SURFboard Troubleshooting Tool",
@@ -102,10 +83,12 @@
 		{
 			"Question" : "Is the device rebooting on its own?",
 			"Popmsg" : "Is the device rebooting on its own? ",
-			"Text" : [
-				"Guide the cx to make sure, the cable are conencted and tight"
+			"Text" : 
+			[
+				"Guide the customer to make sure, the cable are conencted and tight"
 			],
-			"Buttons" : [
+			"Buttons" : 
+			[
 				["device_rebooting__device", "Yes"],
 				["device_model", "No"]
 			]
@@ -119,7 +102,8 @@
 				"Model number:"
 			],
 			"Skips":
-			[	["sbg8300","sbg8300__checkled"],
+			[	
+				["sbg8300","sbg8300__checkled"],
 				["group1led","1led__checkled"],
 				["group3led","3led__checkled"],
 				["group4led","4led__checkled"]
@@ -139,12 +123,12 @@
 				["","","","SBG6782"]
 			],
 			"Buttons": 
-				[
-					["sbg8300__checkled","SBG8300","sbg8300"],
-					["1led__checkled","Group 1-LED","group1led"],
-					["3led__checkled","Group 3-LED","group3led"],
-					["4led__checkled","Group 4-LED"]
-				]
+			[
+				["sbg8300__checkled","SBG8300","sbg8300"],
+				["1led__checkled","Group 1-LED","group1led"],
+				["3led__checkled","Group 3-LED","group3led"],
+				["4led__checkled","Group 4-LED"]
+			]
 		},
 
 		"redirect_toprovision":
@@ -152,7 +136,8 @@
 			"Comments": "provisioning procedure",
 			"Question": "Have we already redirected the Customer to try provising again?",
 			"Text": 
-			[	"***There MUST be an existing case or note where the customer",
+			[	
+				"***There MUST be an existing case or note where the customer",
 				"***was already redirected to the Service Provider from our end."
 			],
 			"Skips":
@@ -172,11 +157,13 @@
 
 		"provision" : {
 			"Question" : "Redirect to service provider for provisioning.",
-			"Skips" : [
+			"Skips" : 
+			[
 				["provision_remotly", "provision_remotly"]
 			],
 			"Text" : 
-			[	"<br>",
+			[	
+				"<br>",
 				"Advise the customer to ensure the MSO collects the HFC MAC ID.",
 				 "Explain to customer there may be a DNS error and to inform the MSO support rep."
 			]
@@ -233,7 +220,8 @@
 		{
 			"Question": "Has the customer owned the modem longer than 20 days?",			
 			"Text" : 
-			[ "If the customer has owned the modem for a short time",
+			[ 
+				"If the customer has owned the modem for a short time",
 				"they may still be able to exchange it with the retailer.",
 				"This could be more convenient for the customer than our warranty replacement options.",
 				"Consult Guided Assistance for scripting."
