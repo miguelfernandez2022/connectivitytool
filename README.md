@@ -1,7 +1,7 @@
 # Connectivity tool README
 
 <!--START_SECTION:badges-->
-## Develomenpt tools
+## Development tools used
 
 ![HTML5](https://img.shields.io/badge/HTML-239120?style=plastic&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=plastic&logo=css3&logoColor=white)
@@ -16,7 +16,7 @@
 
 <!--END_SECTION:badges-->
 
-## Provisioning flowchart
+## Provisioning flowchart evolution
 
 - [x] Beta Version review 0.1
 - [x] Coded in JSON by Matthew Carpenter, ARRIS Tier 1 Support.
@@ -37,10 +37,10 @@
 - [x] Version 6.1 Create a new feature for question template inside the notes
 - [ ] Add delight to the experience when all tasks are complete :tada:
 
-## Interactive flowchart in HTML/Javascript/jQuery
+## JSON files location
 
 >Specify JSON file location at top of flowchart.js
->var stepfile = "filename.json";
+>each file must have a separate variable
 
 ````jsvascript
 var stepfile = "./src/js/start.js"; // specify JSON file location here
@@ -49,13 +49,12 @@ var stepfile = "./src/js/start.js"; // specify JSON file location here
 ## Debug
 
 >Toggle showing a step's name on mouseover by changing debug to true (enable) or false (disable)
->var debug = true;
 
 ````javascript
 var debug = true; //Enables showing STEPNAME when holding mouse pointer over a step
 ````
 
-## Creating steps on json file
+## Creating steps in json file
 
 >Add items to "steps" section of JSON file in following format:
 >All options in each step are optional, but remember to put a comma at the end of all but the last item in a step
