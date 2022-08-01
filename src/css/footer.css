@@ -12,12 +12,12 @@
   color: inherit;
   background-color: #E4ABA7;
   border-radius: 5px;
-  padding: 2px;
+  padding: 5px;
 
 }
 
 .legal p {
-  margin: 1px;
+  margin: 3px;
   padding: 2px;
   text-align: center;
 }
