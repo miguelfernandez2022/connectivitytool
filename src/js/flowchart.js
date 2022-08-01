@@ -238,12 +238,12 @@ var showStep = function (stepname) {
 	}
 
 // Clean the stepdata, delete all TR for others files, used mostly when click back to start again TR.
-if (stepname === "device__rebooting"){
-	stepdata = JSON.parse(sessionStorage.stepdata);
-	//console.log(stepdata);
-}
+	if (stepname === "device__rebooting"){
+		stepdata = JSON.parse(sessionStorage.stepdata);
+		//console.log(stepdata);
+	}
 
-// Grab the troubleshooting for devices that are rebooting itself
+	// Grab the troubleshooting for devices that are rebooting itself
 	if (stepname === "device_rebooting__device"){
 		//console.log(stepname)
 		stepdata = Object.assign(stepdataDeviceRebooting,stepdata);		
@@ -261,8 +261,8 @@ if (stepname === "device__rebooting"){
 	}
 	
 
-// Grab the troubleshooting for surfboard SBG8300 device
-if (stepname === "sbg8300__checkled"){
+	// Grab the troubleshooting for surfboard SBG8300 device
+	if (stepname === "sbg8300__checkled"){
 	//console.log(stepname)
 	stepdata = Object.assign(stepdatasbg8300,stepdata);		
 	//console.log(stepdata)	
@@ -275,9 +275,9 @@ if (stepname === "sbg8300__checkled"){
 		//step does not exist or is malformed, grab the error template
 		step = errorstep(stepname);
 	}		
-}
-// Grab the troubleshooting for 1 LED surfboard devices 
-if (stepname === "1led__checkled"){
+	}
+	// Grab the troubleshooting for 1 LED surfboard devices 
+	if (stepname === "1led__checkled"){
 	//console.log(stepname)
 	stepdata = Object.assign(stepdata1led,stepdata);		
 	//console.log(stepdata)
@@ -291,9 +291,9 @@ if (stepname === "1led__checkled"){
 		//step does not exist or is malformed, grab the error template
 		step = errorstep(stepname);
 	}		
-}
+	}
 
-// Grab the TR for differents surfboard devices. deppends of LED 
+  // Grab the TR for differents surfboard devices. deppends of LED 
 	if (stepname === "3led__checkled"){
 		//console.log(stepname)
 		stepdata = Object.assign(stepdata3led,stepdata);		
@@ -311,7 +311,7 @@ if (stepname === "1led__checkled"){
 	}
 
 
-// Grab the TR for differents surfboard devices. deppends of LED 
+	// Grab the TR for differents surfboard devices. deppends of LED 
 	if (stepname === "4led__checkled"){
 		//console.log(stepname)
 		stepdata = Object.assign(stepdata4led,stepdata);		
