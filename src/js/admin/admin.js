@@ -51,11 +51,11 @@ function selectFile(){
   $("#flowchart-area").append($selectdropdown);
 
 
-  console.log($selectFile.val());
+  //console.log($selectFile.val());
 
   $selectFile.on("change", function(e){
     var stepfile = $selectFile.val();
-    console.log(stepfile);
+    //console.log(stepfile);
     loadfile(stepfile);    
   });
 }
@@ -79,7 +79,7 @@ function loadfile(stepfile){
       "\n\nPress CTRL+C to copy this message and paste it in your notes if you are on a call, then paste it in an email to Tier 2."
       );
   }).always(function() {
-    console.log( "JSON fetch attempt complete." );
+    //console.log( "JSON fetch attempt complete." );
   })
   .complete(function(){
     $load.remove();    
@@ -100,16 +100,15 @@ function selectStep(stepdata){
   $.each(stepdata, function(key,value){
     $selectstep.append("<option value ="+key+">" +key+ "</option>");  
   });
- 
- 
+
   $selectdropdown.append($selectstep);
   $("#flowchart-area").append($selectdropdown);
 
   $selectdropdown.on("change", function(){
     var selected = $selectstep.val();
     present1step(stepdata[selected],selected);
-    console.log(stepdata);
-    console.log(selected);
+    //console.log(stepdata);
+    //console.log(selected);
   });
 }
 
@@ -127,7 +126,7 @@ function present1step(stepdata,selected){
  
   //loop for each step
   $.each(stepdata, function(key,value){  
-    console.log(stepdata);
+    //console.log(stepdata);
     var $il = ("<il class='list-group-item'>"+ "<p class='text-primary'>"+ key +"</p>"+ "<p class='text-muted'>"+ value +"</p>" + "</il>");
     $ul.append($il); 
   });
