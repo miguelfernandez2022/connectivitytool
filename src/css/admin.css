@@ -1,0 +1,14 @@
+#flowchart-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+  margin: 10px;
+}
+.selectdropdown{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3px;
+  margin: 10px;
+}
