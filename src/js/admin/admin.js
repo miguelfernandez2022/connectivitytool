@@ -24,7 +24,9 @@ $(document).ready(function() {
   selectFile();
 });
 
-function selectFile(){
+// Choose json file
+function selectFile()
+{
   var stepfile = "./src/js/start.js"; // specify JSON file location here
   var stepfileDeviceRebooting = "./src/js/device-rebooting.js"; // specify JSON file location here
   var stepfile1led = "./src/js/1led.js"; // specify JSON file location here
@@ -51,16 +53,18 @@ function selectFile(){
   $("#flowchart-area").append($selectdropdown);
 
 
-  //console.log($selectFile.val());
+  ////console.log($selectFile.val());
 
   $selectFile.on("change", function(e){
     var stepfile = $selectFile.val();
-    //console.log(stepfile);
+    ////console.log(stepfile);
     loadfile(stepfile);    
   });
 }
 
-function loadfile(stepfile){
+// Load step json file
+function loadfile(stepfile)
+{
   $(".card").remove();
    // Loading
    var $load = $("<h1 />", {text: "Loading..."});
@@ -70,27 +74,29 @@ function loadfile(stepfile){
     stepdata = data.steps;
    
   }).done(function() {
-    //console.log( "Finished with JSON retrieval." );
+    ////console.log( "Finished with JSON retrieval." );
   }).fail(function( jget, textstatus, error) {
-    //console.log("JSON fetch failed"); 
+    ////console.log("JSON fetch failed"); 
     alert("Unable to fetch the following file:\n\t" +
       stepfile + "\n\nPlease report this issue to a supervisor.\n\n" +
       "Status: " + textstatus + "\nError: " + error +
       "\n\nPress CTRL+C to copy this message and paste it in your notes if you are on a call, then paste it in an email to Tier 2."
       );
   }).always(function() {
-    //console.log( "JSON fetch attempt complete." );
+    ////console.log( "JSON fetch attempt complete." );
   })
   .complete(function(){
     $load.remove();    
-    selectStep(stepdata)
+    selectStep(stepdata);
+    presentallsteps(stepdata);
     //presentsteps(stepdata);
   });
 }
 
 
-//dropdown button to select the step
-function selectStep(stepdata){
+//Dropdown button to select the step
+function selectStep(stepdata)
+{
   $(".card").remove();
   $("#dropdownMenuButton1").remove();
   $selectdropdown = $('.selectdropdown');
@@ -107,27 +113,66 @@ function selectStep(stepdata){
   $selectdropdown.on("change", function(){
     var selected = $selectstep.val();
     present1step(stepdata[selected],selected);
-    //console.log(stepdata);
-    //console.log(selected);
+    ////console.log(stepdata);
+    ////console.log(selected);
   });
 }
 
 
-// function to present the steps
-function present1step(stepdata,selected){
-
+// Present the steps
+function present1step(stepdata,selected)
+{
   //clean the cards on screen
   $(".card").remove();
   
   var $card = $("<div class='card'  style='margin: 5px; width:850px;'>");
   var $cardHeader = $("<div class='card-header'>"+ "Procedure name: " + selected + "</div> ");
   var $steps = $("<div class='card-body'>")
-  var $ul = $("<ul class='list-group list-group-flush'>");
- 
+  var $ul = $("<ul class='list-group list-group-flush'>");  
+  
+
   //loop for each step
-  $.each(stepdata, function(key,value){  
-    //console.log(stepdata);
-    var $il = ("<il class='list-group-item'>"+ "<p class='text-primary'>"+ key +"</p>"+ "<p class='text-muted'>"+ value +"</p>" + "</il>");
+  $.each(stepdata, function(key,value){    
+    //console.log(key);
+    
+    switch (key) {
+      case 'Text':
+        var $il = $("<il class='list-group-item'>");
+        $il.append("<p class='text-primary'>"+ key +":</p>");
+        value.forEach(element => {
+          var $p = $("<p class='text-muted'>"+ element +"</p>")
+          $il.append($p);
+        });
+      break;       
+      case 'QuestionsTemplate':
+        var $il = $("<il class='list-group-item'>");
+        $il.append("<p class='text-primary'>"+ key +":</p>");
+        value.forEach(element => {
+          var $p = $("<p class='text-muted'>"+ element +"</p>")
+          $il.append($p);
+        });
+      break;
+      case 'Buttons':
+        var $il = $("<il class='list-group-item'>");
+        $il.append("<p class='text-primary'>"+ key +":</p>");
+        value.forEach(element => {
+          var $p = $("<p class='text-muted'>"+ element +"</p>")
+          $il.append($p);
+        });
+      break;
+      case 'Skips':
+        var $il = $("<il class='list-group-item'>");
+        $il.append("<p class='text-primary'>"+ key +":</p>");
+        value.forEach(element => {
+          var $p = $("<p class='text-muted'>"+ element +"</p>")
+          $il.append($p);
+        });
+      break;
+    
+      default:
+        var $il = ("<il class='list-group-item'>"+ "<p class='text-primary'>"+ key +":</p>"+ "<p class='text-muted'>"+ value +"</p>" + "</il>");
+        break;
+    }
     $ul.append($il); 
   });
 
@@ -137,32 +182,79 @@ function present1step(stepdata,selected){
   $("#flowchart-area").append($card);  
 }
 
-function presentallsteps(){
-  console.log(stepdata);
-   
+
+function presentallsteps(stepdata)
+{
+  //console.log(stepdata);
+
+  // Report quantiti of procedures.
+  var $steps = $("<div class='card-body'>");
+  var $card = $("<div class='card'  style='margin: 5px; width:850px;'>");
+  var $cardHeader = $("<div class='card-header'>"+ "Report:</div> ");
+  var $ul = $("<ul class='list-group list-group-flush'>");  
+  var report = ("<il class='list-group-item'> <p class='text-primary'> Number of Procedures: </p>"+ "<p class='text-muted'>"+ Object.keys(stepdata).length +"</p>" + "</il>");
+  $ul.append(report);
+  $steps.append($ul); 
+  $card.append($cardHeader);
+  $card.append($steps);    
+  $("#flowchart-area").append($card); 
 
   $.each(stepdata, function(key,value){  
     
     var $card = $("<div class='card'  style='margin: 5px; width:850px;'>");
     var $cardHeader = $("<div class='card-header'>"+ "Procedure name: " + key + "</div> ");
 
-    var $steps = $("<div class='card-body'>")
-    console.log(key , value);
-    
+    var $steps = $("<div class='card-body'>");
+    //console.log(key , value); 
 
     var $ul = $("<ul class='list-group list-group-flush'>");
+    $.each(value, function(key,value){  
+      switch (key) {
+        case 'Text':
+          var $il = $("<il class='list-group-item'>");
+          $il.append("<p class='text-primary'>"+ key +":</p>");
+          value.forEach(element => {
+            var $p = $("<p class='text-muted'>"+ element +"</p>")
+            $il.append($p);
+          });
+        break;          
+        case 'QuestionsTemplate':
+          var $il = $("<il class='list-group-item'>");
+          $il.append("<p class='text-primary'>"+ key +":</p>");
+          value.forEach(element => {
+            var $p = $("<p class='text-muted'>"+ element +"</p>")
+            $il.append($p);
+          });
+        break;
+        case 'Buttons':
+          var $il = $("<il class='list-group-item'>");
+          $il.append("<p class='text-primary'>"+ key +":</p>");
+          value.forEach(element => {
+            var $p = $("<p class='text-muted'>"+ element +"</p>")
+            $il.append($p);
+          });
+        break;
+        case 'Skips':
+          var $il = $("<il class='list-group-item'>");
+          $il.append("<p class='text-primary'>"+ key +": </p>");
+          value.forEach(element => {
+            var $p = $("<p class='text-muted'>"+ element +"</p>")
+            $il.append($p);
+          });
+        break;      
+        default:
+          var $il = ("<il class='list-group-item'>"+ "<p class='text-primary'>"+ key +":</p>"+ "<p class='text-muted'>"+ value +"</p>" + "</il>");
+          break;
+      }
 
-      $.each(value, function(key2,value2){  
-        console.log(key , value);
-        var $il = ("<il class'list-group-item'>"+ key2 + " : " + value2 + "</il>");
+      //console.log(key , value);
+      //var $il = ("<il class='list-group-item'>"+ "<p class='text-primary'>"+ key2 +"</p>"+ "<p class='text-muted'>"+ value2 +"</p>" + "</il>");
+      $ul.append($il); 
+    });
 
-        $ul.append($il); 
-      });
-
-      $steps.append($ul); 
-      $card.append($cardHeader);
-      $card.append($steps);    
-      $("#flowchart-area").append($card);     
-  });
-  
+    $steps.append($ul); 
+    $card.append($cardHeader);
+    $card.append($steps);    
+    $("#flowchart-area").append($card);     
+  });  
 }
