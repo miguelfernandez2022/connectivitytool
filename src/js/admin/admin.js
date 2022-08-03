@@ -34,19 +34,18 @@ function selectFile()
   var stepfile4led = "./src/js/4led.js"; // specify JSON file location here
   var stepfilesbg8300 = "./src/js/sbg8300.js"; // specify JSON file location here
 
-  // TODO: add a radio check select the file
-
+ 
   var $selectdropdown = $("<div class='selectdropdown' >");
   var $selectFile = $("<select class='form-select m-3' name='selectFile'>"); 
 
 
   $selectFile.append("<option disabled selected value> -- Select a file -- </option>");
-  $selectFile.append("<option value=" + stepfile + " > Start</option>");
+  $selectFile.append("<option value=" + stepfile + " > Start </option>");
   $selectFile.append("<option value=" + stepfileDeviceRebooting + " > Device Rebooting </option>");
-  $selectFile.append("<option value=" + stepfile1led + " > 1 LED file </option>");
-  $selectFile.append("<option value=" + stepfile3led + " > 3 LED File </option>");
-  $selectFile.append("<option value=" + stepfile4led + " > 4 LED File </option>");
-  $selectFile.append("<option value=" + stepfilesbg8300 + " > SBG8300 File </option>");
+  $selectFile.append("<option value=" + stepfile1led + " > 1 LED </option>");
+  $selectFile.append("<option value=" + stepfile3led + " > 3 LED </option>");
+  $selectFile.append("<option value=" + stepfile4led + " > 4 LED </option>");
+  $selectFile.append("<option value=" + stepfilesbg8300 + " > SBG8300 </option>");
  
   $selectdropdown.append($selectFile);
   $selectdropdown.append("<span>");
@@ -140,7 +139,7 @@ function present1step(stepdata,selected)
         var $il = $("<il class='list-group-item'>");
         $il.append("<p class='text-primary'>"+ key +":</p>");
         value.forEach(element => {
-          var $p = $("<p class='text-muted'>"+ element +"</p>")
+          var $p = $("<p class='text-muted m-0'>"+ element +"</p>")
           $il.append($p);
         });
       break;       
@@ -148,7 +147,7 @@ function present1step(stepdata,selected)
         var $il = $("<il class='list-group-item'>");
         $il.append("<p class='text-primary'>"+ key +":</p>");
         value.forEach(element => {
-          var $p = $("<p class='text-muted'>"+ element +"</p>")
+          var $p = $("<p class='text-muted m-0'>"+ element +"</p>")
           $il.append($p);
         });
       break;
@@ -156,7 +155,7 @@ function present1step(stepdata,selected)
         var $il = $("<il class='list-group-item'>");
         $il.append("<p class='text-primary'>"+ key +":</p>");
         value.forEach(element => {
-          var $p = $("<p class='text-muted'>"+ element +"</p>")
+          var $p = $("<p class='text-muted m-0'>"+ element +"</p>")
           $il.append($p);
         });
       break;
@@ -164,7 +163,7 @@ function present1step(stepdata,selected)
         var $il = $("<il class='list-group-item'>");
         $il.append("<p class='text-primary'>"+ key +":</p>");
         value.forEach(element => {
-          var $p = $("<p class='text-muted'>"+ element +"</p>")
+          var $p = $("<p class='text-muted m-0'>"+ element +"</p>")
           $il.append($p);
         });
       break;
@@ -214,7 +213,7 @@ function presentallsteps(stepdata)
           var $il = $("<il class='list-group-item'>");
           $il.append("<p class='text-primary'>"+ key +":</p>");
           value.forEach(element => {
-            var $p = $("<p class='text-muted'>"+ element +"</p>")
+            var $p = $("<p class='text-muted m-0'>"+ element +"</p>")
             $il.append($p);
           });
         break;          
@@ -222,7 +221,7 @@ function presentallsteps(stepdata)
           var $il = $("<il class='list-group-item'>");
           $il.append("<p class='text-primary'>"+ key +":</p>");
           value.forEach(element => {
-            var $p = $("<p class='text-muted'>"+ element +"</p>")
+            var $p = $("<p class='text-muted m-0'>"+ element +"</p>")
             $il.append($p);
           });
         break;
@@ -230,7 +229,7 @@ function presentallsteps(stepdata)
           var $il = $("<il class='list-group-item'>");
           $il.append("<p class='text-primary'>"+ key +":</p>");
           value.forEach(element => {
-            var $p = $("<p class='text-muted'>"+ element +"</p>")
+            var $p = $("<p class='text-muted m-0'>"+ element +"</p>")
             $il.append($p);
           });
         break;
@@ -238,12 +237,12 @@ function presentallsteps(stepdata)
           var $il = $("<il class='list-group-item'>");
           $il.append("<p class='text-primary'>"+ key +": </p>");
           value.forEach(element => {
-            var $p = $("<p class='text-muted'>"+ element +"</p>")
+            var $p = $("<p class='text-muted m-0'>"+ element +"</p>")
             $il.append($p);
           });
         break;      
         default:
-          var $il = ("<il class='list-group-item'>"+ "<p class='text-primary'>"+ key +":</p>"+ "<p class='text-muted'>"+ value +"</p>" + "</il>");
+          var $il = ("<il class='list-group-item'>"+ "<p class='text-primary'>"+ key +":</p>"+ "<p class='text-muted m-0'>"+ value +"</p>" + "</il>");
           break;
       }
 

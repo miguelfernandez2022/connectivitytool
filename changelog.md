@@ -63,3 +63,5 @@
 <li> <a href="http://github.com/miguelfernandez2022/connectivitytool/commit/4875de8dba07ccf8abd0d72946868b329e4778f4">view commit &bull;</a> Merge pull request #18 from miguelfernandez2022/feature_doing_august_1_2022</li> 
 <li> <a href="http://github.com/miguelfernandez2022/connectivitytool/commit/d928b97e13de32d723f27bfc59c8598bf03b6557">view commit &bull;</a> Complete show steps functions</li> 
 <li> <a href="http://github.com/miguelfernandez2022/connectivitytool/commit/7757f4f9f751456b026db5e7af561cf5b118671b">view commit &bull;</a> Celan code, cosole logs</li> 
+<li> <a href="http://github.com/miguelfernandez2022/connectivitytool/commit/62f80c9b52e86a476ef803859e7152eb248cacf3">view commit &bull;</a> fix bugs on admin report</li> 
+<li> <a href="http://github.com/miguelfernandez2022/connectivitytool/commit/c7869da9b81e83430fee7238a3d48de0921800fa">view commit &bull;</a> fix css space bugs</li> 
